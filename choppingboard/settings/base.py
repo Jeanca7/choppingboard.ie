@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['choppingboard-jeanca7.c9users.io']
+ALLOWED_HOSTS = ['choppingboard-jeanca7.c9users.io', 'jeancasedo-choppingboard.herokuapp.com']
 
 
 # Application definition
