@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from accounts.views import signup, show_profile 
+from recipes.views import recipes_list, recipe_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', , name="home")
+    path('', recipes_list, name="home"),
+    path('recipe/<int:id>/', recipe_detail, name="recipe_detail"),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', signup, name='signup'),
     path('accounts/profile/', show_profile, name='profile'),

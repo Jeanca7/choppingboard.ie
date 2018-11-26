@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container-fluid">
+    <div class="row">
+    {% for recipe in recipes %}
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="{{MEDIA_URL}}{{recipe.image}}" alt="recipe image">
+                            <div class="caption">
+                                <h4><a href="{% url 'recipe_detail' recipe.id %}">{{recipe.recipe_name}}</a>
+                                
+                                </h4>
+                                <p>{{recipe.preparation}}</p>
+                                
+                                <form method="POST" action="{% url 'donate' %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="recipe" value="{{recipe.id}}">
+                                    <input class="btn btn-primary" type="submit" value="Donate"/>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+    {% endfor %}
+    </div>
+    </div>
+    
+{% endblock content %}
