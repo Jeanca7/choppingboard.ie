@@ -3,7 +3,7 @@ from .forms import MakeDonationForm, DonorForm     #import forms.py  for created
 from django.conf import settings
 from django.contrib import messages
 import stripe
-
+from decimal import *
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 # Create your views here.
@@ -14,8 +14,6 @@ def donation_checkout(request):
     donor_form=DonorForm()
     
     context = {'donation_form':donation_form, 'donor_form':donor_form, 'publishable': settings.STRIPE_PUBLISHABLE_KEY} 
-   
-    
     return render(request, "donation/view_donation.html", context)
     
 def submit_donation(request):
@@ -26,12 +24,12 @@ def submit_donation(request):
     if donor_form.is_valid() and donation_form.is_valid(): #is valid if i get stripe.id
         
         #grab the money and run
-        # donation_total = cart_items_and_total['cart_total'] #get total of the cart
-        stripe_token=payment_form.cleaned_data['stripe_id'] # cleaned_data gives me the digits of the card 
+        donation_quantity = Decimal(request.POST.get('donation_quantity'))
+        stripe_token=donation_form.cleaned_data['stripe_id'] # cleaned_data gives me the digits of the card 
 
         try:
 
-            total_in_cent = int(total*100)
+            total_in_cent = int(donation_quantity*100)
             donor = stripe.Charge.create(
                 amount=total_in_cent,
                 currency="EUR",
@@ -43,7 +41,7 @@ def submit_donation(request):
             print("Declined")
             messages.error(request, "Your card was declined!")
 
-        if donator.paid:
+        if donor.paid:
             print("Paid")
             messages.error(request, "You have successfully paid")
         
