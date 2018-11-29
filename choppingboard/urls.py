@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from accounts.views import signup, show_profile 
 from recipes.views import recipes_list, recipe_detail, show_recipe_form
 from donation.views import submit_donation, donation_checkout 
-from accounts import urls as accounts_urls
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
