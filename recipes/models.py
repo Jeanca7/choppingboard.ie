@@ -8,7 +8,8 @@ class Recipe(models.Model):
     ingredients = models.TextField()
     preparation = models.TextField()
     image = models.ImageField(upload_to='images')
+    videofile = models.FileField(upload_to='videos/', null=True, verbose_name="")
     
     
     def __str__(self):
-        return self.name
+        return self.recipe_name +": " + str(self.videofile)

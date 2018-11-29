@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
+
+{% block head_js %}
+  {{ block.super }}
+  <script src="https://js.stripe.com/v2/" type="text/javascript"></script> <!--load-->
+  <script type="text/javascript">
+      //<![CDATA[
+      Stripe.publishableKey = '{{ publishable }}'; //I will use Stripe in the stripe.js file through my publishableKey
+      //]]>
+  </script>
+  <script type="text/javascript" src="{% static 'donation/stripe.js' %}"></script>
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Donation</h1>
+
+<form role="form" method="post" id="payment-form" action="{% url 'submit_donation' %}"> <!--create this url name and view-->
+        
+    <legend>Payment Details</legend>
+
+    <div id="credit-card-errors" style="display:none">
+      <div class="alert-message block-message error" id="stripe-error-message"></div>
+    </div>
+
+    <div class="form-group col-md-6">
+        {{ DonorForm|as_bootstrap }}
+    </div>
+
+    <div class="form-group col-md-6">
+        {{ MakeDonationForm|as_bootstrap }}
+    </div>
+
+    {% csrf_token %}
+    
+    <div class="form-group col-md-12">
+      <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="submit donation">
+    </div>
+
+    </form>
+    
+    {% endblock %}

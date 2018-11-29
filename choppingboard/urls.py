@@ -14,15 +14,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include  #replace if necessary
+from django.views.static import serve
+from django.conf import settings
+from django.conf.urls.static import static 
 from accounts.views import signup, show_profile 
-from recipes.views import recipes_list, recipe_detail
+from recipes.views import recipes_list, recipe_detail, show_recipe_form
+from donation.views import submit_donation, donation_checkout 
+from accounts import urls as accounts_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', recipes_list, name="home"),
+    path('media/<path:path>/',serve, {'document_root': settings.MEDIA_ROOT}),
     path('recipe/<int:id>/', recipe_detail, name="recipe_detail"),
+    path('post_recipe/', show_recipe_form, name="show_recipe_form"),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', signup, name='signup'),
     path('accounts/profile/', show_profile, name='profile'),
-]
+    path('cook/donation/', submit_donation, name='submit_donation'),
+    path('cook/donation_checkout/', donation_checkout, name='donation_checkout'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

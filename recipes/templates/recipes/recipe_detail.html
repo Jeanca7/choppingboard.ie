@@ -5,7 +5,7 @@
 
         <div class="col-sm-4 col-lg-4 col-md-4">
             <div class="thumbnail">
-                <img src="{{MEDIA_URL}}{{recipe.image}}" alt="recipe image">
+                <img src="{{MEDIA_URL}}{{recipe.image}}" alt="recipe's image">
                 <div class="caption">
                     <h4>{{recipe.recipe_name}}
 
@@ -16,26 +16,13 @@
                     <p>{{recipe.preparation}}</p>
 
 
-                    <form method="POST" action="{% url 'donate' %}">
-                        <input type="hidden" name="product" value="{{recipe.id}}">
-                        <input class="btn btn-primary" type="submit" value="Donate" />
-                    </form>
-
+                    <a href="{% url 'donation_checkout' %}" class="btn btn-primary">Donate</a>
 
                     <a href="{% url 'home' %}" class="btn btn-primary">back</a>
                 </div>
             </div>
 
 
-            <h2>Reviews</h2>
-            <hr> {% if user.is_authenticated %}
-            <form method="POST" action="{% url 'write_reviews' product.id %}">
-                {% csrf_token %} {{ form.as_p }}
-
-                <input type="submit" value="Submit" />
-            </form>
-            {% endif %}
-            <hr>
             <div>
                 {% for review in product.reviews.all|dictsortreversed:'created_date' %}
 
@@ -52,3 +39,4 @@
 </div>
 
 {% endblock content %}
+
