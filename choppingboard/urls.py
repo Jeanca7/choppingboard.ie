@@ -34,4 +34,4 @@ urlpatterns = [
     path('accounts/profile/', show_profile, name='profile'),
     path('cook/donation/', submit_donation, name='submit_donation'),
     path('cook/donation_checkout/', donation_checkout, name='donation_checkout'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
