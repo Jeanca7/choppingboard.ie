@@ -12,4 +12,4 @@ class Recipe(models.Model):
     
     
     def __str__(self):
-        return self.recipe_name +": " + str(self.videofile)
+        return self.recipe_name
