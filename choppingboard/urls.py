@@ -18,20 +18,23 @@ from django.urls import path, include  #replace if necessary
 from django.views.static import serve
 from django.conf import settings
 from django.conf.urls.static import static 
-from accounts.views import signup, show_profile 
-from recipes.views import recipes_list, recipe_detail, show_recipe_form
+from accounts.views import signup, dashboard 
+from recipes.views import recipes_list, recipe_detail, show_recipe_form, edit_recipe, delete_recipe
 from donation.views import submit_donation, donation_checkout 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', recipes_list, name="home"),
     path('media/<path:path>/',serve, {'document_root': settings.MEDIA_ROOT}),
     path('recipe/<int:id>/', recipe_detail, name="recipe_detail"),
     path('post_recipe/', show_recipe_form, name="show_recipe_form"),
-    path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', signup, name='signup'),
-    path('accounts/profile/', show_profile, name='profile'),
+    path('accounts/dashboard/', dashboard, name='dashboard'),
     path('cook/donation/', submit_donation, name='submit_donation'),
     path('cook/donation_checkout/', donation_checkout, name='donation_checkout'),
+    path('cook/edit_recipe/<int:id>/', edit_recipe, name='edit_recipe'),
+    path('cook/delete_recipe/<int:id>/', delete_recipe, name='delete_recipe'),
 ] 
+

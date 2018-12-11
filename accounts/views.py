@@ -1,4 +1,5 @@
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import SignUpForm, ProfileForm
 
@@ -16,11 +17,13 @@ def signup(request):
             raw_password = user_form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('home')  #redirect to url
+            return redirect('home') 
     else:
         user_form = SignUpForm()
         profile_form = ProfileForm()
         return render(request, 'registration/signup.html', {'user_form': user_form, 'profile_form': profile_form})
+        
 
-def show_profile(request):
-    return render(request, 'profile.html')
+@login_required
+def dashboard(request):
+    return render(request, 'dashboard.html', {'section': 'dashboard'})

@@ -129,3 +129,6 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+LOGIN_REDIRECT_URL="dashboard"
+LOGOUT_REDIRECT_URL="/"

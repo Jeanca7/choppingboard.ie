@@ -5,33 +5,41 @@
 
         <div class="col-sm-4 col-lg-4 col-md-4">
             <div class="thumbnail">
+                <video width="320" height="240" controls>
+  <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/mp4">
+  <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+                
                 <img src="{{MEDIA_URL}}{{recipe.image}}" alt="recipe's image">
+                
                 <div class="caption">
-                    <h4>{{recipe.recipe_name}}
-
-                    </h4>
+                    <h3>{{recipe.recipe_name}}</h3>
+                    </div>
+                    <div>
+                    <h5 class="avatar-cook_name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook }}</h5>
+                    <span class="boldtext date-views">Published on: {{ recipe.created_date.date }} - Views:{{ recipe.views }}</span>
+                    </div>
                     <p>{{recipe.cusine_type}}</p>
                     <p>{{recipe.diet_type}}</p>
                     <p>{{recipe.ingredients}}</p>
                     <p>{{recipe.preparation}}</p>
-
+                    
+                    <p><span class="boldtext">Cook:</span> {{ recipe.cook }} </p>
+                    
+                    
+                    
 
                     <a href="{% url 'donation_checkout' %}" class="btn btn-primary">Donate</a>
 
                     <a href="{% url 'home' %}" class="btn btn-primary">back</a>
-                </div>
-            </div>
-
-
-            <div>
-                {% for review in product.reviews.all|dictsortreversed:'created_date' %}
-
-
-                <h3>{{ review.title }} - <i>{{ review.author }}</i></h3>
-                <p>{{ review.content }}</p>
-                {{ review.product }}
-                <hr> {% endfor %}
-
+                    
+                    {% if request.user == recipe.cook %}
+                    <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-primary">Edit Recipe</a>
+                    <a href="{% url 'delete_recipe' recipe.id %}" class="btn btn-primary">Delete Recipe</a>
+                    {% endif %}
+                    
+                
             </div>
 
         </div>
