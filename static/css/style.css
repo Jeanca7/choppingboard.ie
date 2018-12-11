@@ -53,3 +53,14 @@ footer {
 .recipe_name{
     margin-bottom: 0;
 }
+
+.navbar-dark .navbar-nav .nav-link.disabled{
+    color: Cyan;
+}
+
+.img-nav-circle{
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    border: 1px;
+}

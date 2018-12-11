@@ -17,13 +17,13 @@ def signup(request):
             raw_password = user_form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('home') 
+            return redirect("home") 
     else:
         user_form = SignUpForm()
         profile_form = ProfileForm()
         return render(request, 'registration/signup.html', {'user_form': user_form, 'profile_form': profile_form})
         
 
-@login_required
+
 def dashboard(request):
     return render(request, 'dashboard.html', {'section': 'dashboard'})
