@@ -14,11 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from django.urls import path, include  #replace if necessary
 from django.views.static import serve
 from django.conf import settings
 from django.conf.urls.static import static 
-from accounts.views import signup, dashboard 
+from accounts.views import signup, dashboard, edit 
 from recipes.views import recipes_list, recipe_detail, show_recipe_form, edit_recipe, delete_recipe
 from donation.views import submit_donation, donation_checkout 
 
@@ -32,6 +33,9 @@ urlpatterns = [
     path('post_recipe/', show_recipe_form, name="show_recipe_form"),
     path('accounts/signup/', signup, name='signup'),
     path('accounts/dashboard/', dashboard, name='dashboard'),
+    path('accounts/edit/', edit, name='edit'),
+    path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
+    path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
     path('cook/donation/', submit_donation, name='submit_donation'),
     path('cook/donation_checkout/', donation_checkout, name='donation_checkout'),
     path('cook/edit_recipe/<int:id>/', edit_recipe, name='edit_recipe'),
