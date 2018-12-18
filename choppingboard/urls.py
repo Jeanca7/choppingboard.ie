@@ -43,3 +43,6 @@ urlpatterns = [
     path('cook/delete_recipe/<int:id>/', delete_recipe, name='delete_recipe'),
 ] 
 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
