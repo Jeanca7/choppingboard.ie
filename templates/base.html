@@ -49,16 +49,18 @@
         </li>
       </ul>
 
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav nav-bar-right">
         <li class="nav-item">
           <a class="nav-link disabled" href="#"><img src="{{ MEDIA_URL }}{{ user.profile.image }}" class="img-nav-circle"> Hello {{ request.user.first_name }}, </a>
         </li>
+        </ul>
+        
+        <ul class="navbar-nav nav-bar-right">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">
-          <i class="fa fa-sign-out"></i>Log Out</a>
-        </li>
-      </ul>
-
+          <a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>Log Out</a>
+          </li>
+        </ul>
+      
       {% else %}
 
       <ul class="nav navbar-nav ml-auto">
