@@ -25,7 +25,7 @@ def register(request):
     return render(request, 'accounts/register.html', {'user_form': user_form})
         
 
-
+@login_required
 def dashboard(request):
     return render(request, 'dashboard.html', {'section': 'dashboard'})
 
