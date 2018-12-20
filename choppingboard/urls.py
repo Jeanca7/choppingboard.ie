@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.views.static import serve
 from django.conf import settings
 from django.conf.urls.static import static 
-from accounts.views import signup, dashboard, edit 
+from accounts.views import register, dashboard, edit 
 from recipes.views import recipes_list, recipe_detail, show_recipe_form, edit_recipe, delete_recipe
 from donation.views import submit_donation, donation_checkout 
 
@@ -32,9 +32,9 @@ urlpatterns = [
     path('media/<path:path>/',serve, {'document_root': settings.MEDIA_ROOT}),
     path('recipe/<int:id>/', recipe_detail, name="recipe_detail"),
     path('post_recipe/', show_recipe_form, name="show_recipe_form"),
-    path('accounts/signup/', signup, name='signup'),
-    path('accounts/dashboard/', dashboard, name='dashboard'),
-    path('accounts/edit/', edit, name='edit'),
+    path('register/', register, name='register'),
+    path('dashboard/', dashboard, name='dashboard'),
+    path('edit_profile/', edit, name='edit'),
     path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
     path('cook/donation/', submit_donation, name='submit_donation'),
