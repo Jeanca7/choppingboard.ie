@@ -47,7 +47,7 @@ def edit(request):
     else:
         user_form = UserEditForm(instance=request.user)
         if Profile is None:
-            Profile.objects.create(user)
+            Profile.objects.create(request.user)
             profile_form = ProfileEditForm(instance=request.user.profile)
         else:
             profile_form = ProfileEditForm(instance=request.user.profile)
