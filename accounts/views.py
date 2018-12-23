@@ -6,6 +6,9 @@ from .forms import UserRegistrationForm, UserEditForm, ProfileEditForm
 from .models import Profile
 
 
+
+
+
 def register(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
@@ -43,7 +46,10 @@ def edit(request):
             messages.error(request, 'Error updating your profile')
     else:
         user_form = UserEditForm(instance=request.user)
-        profile_form = ProfileEditForm(instance=request.user.profile)
+        if profile is not None:
+            profile_form = ProfileEditForm(instance=request.user.profile)
+        else:
+            Profile.objects.create(user=new_user)
     return render(request, 'accounts/edit.html', {'user_form': user_form, 'profile_form': profile_form})
 
 
