@@ -46,12 +46,12 @@ def edit(request):
             messages.error(request, 'Error updating your profile')
     else:
         user_form = UserEditForm(instance=request.user)
-        if profile is not None:
-            profile_form = ProfileEditForm(instance=request.user.profile)
-        else:
+        if profile is None:
             Profile.objects.create(user)
             profile_form = ProfileEditForm(instance=request.user.profile)
-    return render(request, 'accounts/edit.html', {'user_form': user_form, 'profile_form': profile_form})
+        else:
+            profile_form = ProfileEditForm(instance=request.user.profile)
+        return render(request, 'accounts/edit.html', {'user_form': user_form, 'profile_form': profile_form})
 
 
     
