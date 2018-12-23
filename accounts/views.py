@@ -50,6 +50,7 @@ def edit(request):
             profile_form = ProfileEditForm(instance=request.user.profile)
         else:
             Profile.objects.create(user=new_user)
+            profile_form = ProfileEditForm(instance=request.user.profile)
     return render(request, 'accounts/edit.html', {'user_form': user_form, 'profile_form': profile_form})
 
 
