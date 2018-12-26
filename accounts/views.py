@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm, UserEditForm, ProfileEditForm
 from .models import Profile
-
+from django.core.exceptions import ObjectDoesNotExist
 
 
 
@@ -47,11 +47,10 @@ def edit(request):
     else:
         user_form = UserEditForm(instance=request.user)
         
-        
-        if request.user.profile is None:
-            Profile.objects.create(request.user)
+        try:
             profile_form = ProfileEditForm(instance=request.user.profile)
-        else:
+        except Profile.DoesNotExist:
+            Profile.objects.create(request.user)
             profile_form = ProfileEditForm(instance=request.user.profile)
         return render(request, 'accounts/edit.html', {'user_form': user_form, 'profile_form': profile_form})
 
