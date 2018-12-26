@@ -50,8 +50,7 @@ def edit(request):
         try:
             profile_form = ProfileEditForm(instance=request.user.profile)
         except Profile.DoesNotExist:
-            user=request.user
-            Profile.objects.create(user)
+            Profile.objects.create(user=request.user)
             profile_form = ProfileEditForm(instance=request.user.profile)
         return render(request, 'accounts/edit.html', {'user_form': user_form, 'profile_form': profile_form})
 
