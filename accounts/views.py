@@ -46,7 +46,9 @@ def edit(request):
             messages.error(request, 'Error updating your profile')
     else:
         user_form = UserEditForm(instance=request.user)
-        if user.profile is None:
+        
+        
+        if request.user.profile is None:
             Profile.objects.create(request.user)
             profile_form = ProfileEditForm(instance=request.user.profile)
         else:
