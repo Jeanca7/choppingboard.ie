@@ -61,7 +61,9 @@ ROOT_URLCONF = 'choppingboard.urls'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'accounts.authentication.EmailAuthBackend',
-    'social_core.backends.facebook.FacebookOAuth2',]
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    ]
 
 TEMPLATES = [
     {
@@ -144,3 +146,6 @@ LOGOUT_URL="logout"
 
 SOCIAL_AUTH_FACEBOOK_KEY = '284271402279430'
 SOCIAL_AUTH_FACEBOOK_SECRET = '2922e0e3dbd3522eb3ce45b12d39d083'
+
+SOCIAL_AUTH_TWITTER_KET = '6CloWsTUeX5lLdmvjG9eidEsX'
+SOCIAL_AUTH_TWITTER_SECRET = 'bRY4kw4JJKL5FBXYW02blLKaFjQDZxINOrIgx42ehEdAJpw65O'
