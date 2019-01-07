@@ -63,6 +63,7 @@ AUTHENTICATION_BACKENDS = [
     'accounts.authentication.EmailAuthBackend',
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
     ]
 
 TEMPLATES = [
@@ -149,3 +150,6 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '2922e0e3dbd3522eb3ce45b12d39d083'
 
 SOCIAL_AUTH_TWITTER_KET = '6CloWsTUeX5lLdmvjG9eidEsX'
 SOCIAL_AUTH_TWITTER_SECRET = 'bRY4kw4JJKL5FBXYW02blLKaFjQDZxINOrIgx42ehEdAJpw65O'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '684227068838-igvhnvvfslhp1pa0q5nuf294rbkcj8vq.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Wskni7OTis4hS8zMtlcVxpiT'
