@@ -1,10 +1,14 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+
+{% block title %} {{ recipe.recipe_name }} {% endblock %}
+
+{% block content %}
+<h1>{{ recipe.recipe_name }}</h1>
 <div class="container-fluid">
     <div class="row">
-
-
+        
         <div class="col-sm-4 col-lg-4 col-md-4">
-            <div class="thumbnail">
+            
                 <video width="320" height="240" controls>
   <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/mp4">
   <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/ogg">
@@ -12,6 +16,36 @@
 </video>
                 
                 <img src="{{MEDIA_URL}}{{recipe.image}}" alt="recipe's image">
+                {% with total_likes=recipe.users_like.count users_like=recipe.users_like.all %}
+                <div class="image-info">
+                    <div>
+                <span class="count">
+                    <span class="total">{{ total_likes }}</span>
+                    like{{ total_likes|pluralize }}
+                </span>
+                <a href="#" data-id="{{ recipe.id }}" data-action="{% if request.user in users_like %}un{% endif %}like" class="like button">
+                    {% if request.user not in users_like %}
+                    Like
+                    {% else %}
+                    Unlike
+                    {% endif %}
+                </a>        
+                    </div>
+                </div>
+                
+                
+                <div class="recipe-likes">
+                    {% for user in recipe.users_like.all %}
+                    <div>
+                        <img src="{{ MEDIA_URL }}{{ user.profile.image }}" class="img-circle">
+                        <p>{{ user.first_name }}</p>
+                    </div>
+                    {% empty %}
+                    Nobody likes this yet.
+                    {% endfor %}
+                </div>
+                {% endwith %}
+                
                 
                 <div class="caption">
                     <h3>{{recipe.recipe_name}}</h3>
@@ -19,7 +53,8 @@
                     <div>
                     <h5 class="avatar-cook_name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook }}</h5>
                     <span class="boldtext date-views">Published on: {{ recipe.created_date.date }} - Views:{{ recipe.views }}</span>
-                    </div>
+                    <div class="thumbnail">
+                        <div class="thumbnail">
                     <p>{{recipe.cusine_type}}</p>
                     <p>{{recipe.diet_type}}</p>
                     <p>{{recipe.ingredients}}</p>
@@ -31,8 +66,8 @@
                     
 
                     <a href="{% url 'donation_checkout' %}" class="btn btn-primary">Donate</a>
-
                     <a href="{% url 'home' %}" class="btn btn-primary">back</a>
+                    
                     
                     {% if request.user == recipe.cook %}
                     <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-primary">Edit Recipe</a>
@@ -45,6 +80,13 @@
         </div>
     </div>
 </div>
-
 {% endblock content %}
+
+
+{% block domready %}
+
+
+{% endblock %}
+
+
 
