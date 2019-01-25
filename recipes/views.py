@@ -49,7 +49,9 @@ def edit_recipe(request, id):
     else:
         form=RecipeForm(instance=recipe) #populate with the recipe
         return render(request, "recipe/recipe_form.html", {'form': form})
-        
+
+
+
 @ajax_required
 @login_required
 @require_POST
