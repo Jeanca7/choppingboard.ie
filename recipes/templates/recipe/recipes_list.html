@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
     <div class="container-fluid">
     <div class="row">
     {% for recipe in recipes %}
@@ -8,11 +9,19 @@
                     <div class="col-sm-4 col-lg-4 col-md-4 card-dim">
                         <div class="thumbnail">
                             
-                            <div>
+                            <div class="video">
                             <a href="{% url 'recipe_detail' recipe.id %}">
-                            <img src="{{MEDIA_URL}}{{recipe.image}}" alt="recipe's image" class="recipe-img-size">
+                            
+                            
+                            <video width="320" height="240" controls>
+  <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/mp4">
+  <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
                             </a>
                             </div>
+                            
+                            
                             <div class="caption">
                                 <a href="{% url 'recipe_detail' recipe.id %}"><h3 class="recipe_name">{{recipe.recipe_name}}</h3></a>
                                 </div>
