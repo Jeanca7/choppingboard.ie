@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import dj_database_url
+from django.urls import reverse_lazy 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -37,13 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
-    'recipes',
+    'accounts.apps.AccountsConfig',
+    'recipes.apps.RecipesConfig',
     'django_forms_bootstrap',
-    'donation',
+    'donation.apps.DonationConfig',
     'storages',
     'social_django',
     'django_ajax',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +61,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'choppingboard.urls'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailAuthBackend'
+
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -157,3 +163,8 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '684227068838-igvhnvvfslhp1pa0q5nuf294rbkcj8vq.a
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Wskni7OTis4hS8zMtlcVxpiT'
 
 
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}
+
+THUMBNAIL_DEBUG = True

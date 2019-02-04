@@ -14,38 +14,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.contrib.auth import views as auth_views
-from django.urls import path, include  
-from django.views.static import serve
+from django.urls import include, path
 from django.conf import settings
-from django.conf.urls.static import static 
-from accounts.views import register, dashboard, edit
-from recipes.views import recipes_list, recipe_detail, show_recipe_form, edit_recipe, delete_recipe, recipe_like
+from django.conf.urls.static import static
+from django.views.static import serve
 from donation.views import submit_donation, donation_checkout 
 
+# django.conf.urls.url()
+# url(r'^captcha/', include('captcha.urls')),
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('', include('recipes.urls', namespace='recipes')),
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('media/<path:path>/',serve, {'document_root': settings.MEDIA_ROOT}),
-    path('', recipes_list, name="home"),
-    path('recipe/<int:id>/', recipe_detail, name="recipe_detail"),
-    path('post_recipe/', show_recipe_form, name="show_recipe_form"),
-    path('cook/edit_recipe/<int:id>/', edit_recipe, name='edit_recipe'),
-    path('cook/delete_recipe/<int:id>/', delete_recipe, name='delete_recipe'),
-    path('like/', recipe_like, name='like'),
-    path('register/', register, name='register'),
-    path('dashboard/', dashboard, name='dashboard'),
-    path('edit_profile/', edit, name='edit'),
-    path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
-    path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
     path('cook/donation/', submit_donation, name='submit_donation'),
     path('cook/donation_checkout/', donation_checkout, name='donation_checkout'),
 ] 
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     

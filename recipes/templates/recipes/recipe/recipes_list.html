@@ -17,23 +17,23 @@
                         <div class="thumbnail">
                             
                             <div class="video">
-                            <a href="{% url 'recipe_detail' recipe.id %}">
+                            <a href="{% url 'recipes:recipe_detail' recipe.id %}">
                             
                             
                             <video width="320" height="240" controls>
-  <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/mp4">
-  <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/ogg">
-  Your browser does not support the video tag.
-</video>
+                              <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/mp4">
+                              <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/ogg">
+                              Your browser does not support the video tag.
+                            </video>
                             </a>
                             </div>
                             
                             
                             <div class="caption">
-                                <a href="{% url 'recipe_detail' recipe.id %}"><h3 class="recipe_name">{{recipe.recipe_name}}</h3></a>
+                                <a href="{% url 'recipes:recipe_detail' recipe.id %}"><h3 class="recipe_name">{{recipe.recipe_name}}</h3></a>
                                 </div>
                                 <div>
-                                    <a href="{% url 'recipe_detail' recipe.id %}">
+                                    <a href="{% url 'recipes:recipe_detail' recipe.id %}">
                                     <h6 class="avatar-cook_name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook }}</h6>
                                     <span class="boldtext date-views">Published on: {{ recipe.created_date.date }} - Views:{{ recipe.views }}</span>
                                 </a>

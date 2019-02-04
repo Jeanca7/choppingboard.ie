@@ -19,7 +19,7 @@ def show_recipe_form(request):
         return redirect(recipe_detail, recipe.id)
     else:
         form=RecipeForm()
-        return render(request, "recipe/recipe_form.html", {'form': form})
+        return render(request, "recipes/recipe/recipe_form.html", {'form': form})
 
 @login_required
 def delete_recipe(request, id):
@@ -30,14 +30,14 @@ def delete_recipe(request, id):
 
 def recipes_list(request):
     recipes = Recipe.objects.filter(created_date__lte = timezone.now())
-    return render(request, "recipe/recipes_list.html", {"recipes": recipes})
+    return render(request, "recipes/recipe/recipes_list.html", {"recipes": recipes})
     
     
 def recipe_detail(request, id):
     recipe = get_object_or_404(Recipe, pk=id)
     recipe.views += 1
     recipe.save()
-    return render(request, "recipe/recipe_detail.html", {"recipe": recipe})
+    return render(request, "recipes/recipe/recipe_detail.html", {'section': 'recipes', 'recipe': recipe})
 
 #edit recipe
 def edit_recipe(request, id):
@@ -48,7 +48,7 @@ def edit_recipe(request, id):
         return redirect("/")
     else:
         form=RecipeForm(instance=recipe) #populate with the recipe
-        return render(request, "recipe/recipe_form.html", {'form': form})
+        return render(request, "recipes/recipe/recipe_form.html", {'form': form})
 
 
 
