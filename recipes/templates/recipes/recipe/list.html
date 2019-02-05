@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %} Recipes {% endblock %}
+
+{% block content %}
+<h1>Recipes created </h1>
+<div id="image-list">
+    {% include "recipes/recipe/list_ajax.html" %}
+</div>
+{% endblock %}

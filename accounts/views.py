@@ -6,9 +6,13 @@ from common.decorators import ajax_required
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm, UserEditForm, ProfileEditForm
-from .models import Profile
+from .models import Profile, Contact
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
+from common.decorators import ajax_required
+from actions.utils import create_action
+
 
 
 @login_required
@@ -69,4 +73,21 @@ def edit(request):
         return render(request, 'accounts/edit.html', {'user_form': user_form, 'profile_form': profile_form})
 
 
-    
+@ajax_required
+@require_POST
+@login_required
+def user_follow(request):
+    user_id = request.POST.get('id')
+    action = request.POST.get('action')
+    if user_id and action:
+        try:
+            user = User.objects.get(id=user_id)
+            if action == 'follow':
+                Contact.objects.get_or_create(user_from=request.user, user_to=user)
+                create_action(request.user, 'is following', user)
+            else:
+                Contact.objects.filter(user_from=request.user, user_to=user).delete()
+            return JsonResponse({'status':'ok'})
+        except User.DoesNotExist:
+            return JsonResponse({'status':'ko'})
+    return JsonResponse({'status':'ko'})

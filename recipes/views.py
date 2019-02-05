@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from common.decorators import ajax_required
+from django.http import HttpResponse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 @login_required
@@ -28,9 +30,31 @@ def delete_recipe(request, id):
     return redirect("/")
 
 
+
+@login_required
+def recipe_list(request):
+    recipes = Recipe.objects.all()
+    paginator = Paginator(recipes, 8)
+    page = request.GET.get('page')
+    try:
+        recipes = paginator.page(page)
+    except PageNotAnInteger:
+        recipes = paginator.page(1)
+    except EmptyPage:
+        if request.is_ajax():
+            return HttpResponse('')
+        recipes = paginator.page(paginator.num_pages)
+    if request.is_ajax():
+        return render(request, 'recipes/recipe/list_ajax.html', {'section': 'my_recipes', 'recipes': recipes })
+    
+    return render(request, 'recipes/recipe/list.html', {'section': 'my_recipes', 'recipes': recipes })
+
+
+
 def recipes_list(request):
     recipes = Recipe.objects.filter(created_date__lte = timezone.now())
     return render(request, "recipes/recipe/recipes_list.html", {"recipes": recipes})
+
     
     
 def recipe_detail(request, id):

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'social_django',
     'django_ajax',
     'sorl.thumbnail',
+    'actions.apps.ActionsConfig',
 ]
 
 MIDDLEWARE = [

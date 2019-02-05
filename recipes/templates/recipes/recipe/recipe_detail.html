@@ -10,7 +10,8 @@
     <div class="row">
         
         <div class="col-sm-4 col-lg-4 col-md-4">
-            
+
+<div class="row">            
 <video width="320" height="240" controls>
   <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/mp4">
   <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/ogg">
@@ -22,11 +23,12 @@
                     <img src="{{ im.url }}" class="image-detail">
                 </a>
                 {% endthumbnail %}
-                
+                </div>
                 
                 {% with total_likes=recipe.users_like.count users_like=recipe.users_like.all %}
-                <div class="image-info">
-                    <div>
+                
+                   <div class="image-info">
+                      <div> 
                 <span class="count">
                     <span class="total">{{ total_likes }}</span>
                     like{{ total_likes|pluralize }}
@@ -37,12 +39,14 @@
                     {% else %}
                     Unlike
                     {% endif %}
-                </a>        
-                    </div>
+                </a>
                 </div>
+                </div>
+                    
                 
                 
-                <div class="recipe-likes">
+                
+                <div class="row"> 
                     {% for user in recipe.users_like.all %}
                     <div>
                         <img src="{{ MEDIA_URL }}{{ user.profile.image }}" class="img-circle">
@@ -87,6 +91,9 @@
 
         </div>
     </div>
+</div>
+
+</div>
 </div>
 {% endblock content %}
 
