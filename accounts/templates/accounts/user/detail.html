@@ -6,7 +6,7 @@
 {% block content %}
 <h1>{{ user.get_full_name }}</h1>
 <div class="profile-info">
-    {% thumbnail user.profile.image "180x180" crop="100%" as im %}
+    {% thumbnail user.profile.image "180x180" crop="100%" as im %} 
     <img src="{{ im.url }}" class="user-detail">
     {% endthumbnail %}
 </div>
