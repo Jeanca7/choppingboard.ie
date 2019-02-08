@@ -8,6 +8,8 @@ from django.views.decorators.http import require_POST
 from common.decorators import ajax_required
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib import messages
+
 
 # Create your views here.
 @login_required
@@ -18,7 +20,8 @@ def show_recipe_form(request):
         recipe.cook=request.user
         recipe.created_date = timezone.now()
         recipe.save()
-        return redirect(recipe_detail, recipe.id)
+        messages.success(request, 'recipe added successfully')
+        return redirect('recipes:recipe_detail', id=recipe.id)
     else:
         form=RecipeForm()
         return render(request, "recipes/recipe/recipe_form.html", {'form': form})
@@ -27,6 +30,7 @@ def show_recipe_form(request):
 def delete_recipe(request, id):
     recipe = get_object_or_404(Recipe, pk=id)
     recipe.delete()
+    messages.success(request, 'recipe deleted successfully')
     return redirect("/")
 
 
@@ -67,9 +71,11 @@ def recipe_detail(request, id):
 def edit_recipe(request, id):
     recipe = get_object_or_404(Recipe, pk=id)
     if request.method=="POST":
-        form = RecipeForm(request.POST, instance=recipe)
-        form.save()
-        return redirect("/")
+        form = RecipeForm(instance=recipe, data=request.POST, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Recipe has been successfully updated.')
+            return redirect("/")
     else:
         form=RecipeForm(instance=recipe) #populate with the recipe
         return render(request, "recipes/recipe/recipe_form.html", {'form': form})
