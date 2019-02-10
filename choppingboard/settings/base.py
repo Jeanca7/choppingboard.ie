@@ -14,6 +14,7 @@ import os
 import dj_database_url
 from django.urls import reverse_lazy 
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -164,6 +165,11 @@ SOCIAL_AUTH_TWITTER_SECRET = 'bRY4kw4JJKL5FBXYW02blLKaFjQDZxINOrIgx42ehEdAJpw65O
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '684227068838-igvhnvvfslhp1pa0q5nuf294rbkcj8vq.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Wskni7OTis4hS8zMtlcVxpiT'
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '86amq4ng0ivf7l'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'UXUl0dYjStNzDB0O'
+
+
 
 
 ABSOLUTE_URL_OVERRIDES = {
