@@ -22,6 +22,7 @@ maxminddb==1.4.1
 oauthlib==2.1.0
 psycopg2==2.7.6.1
 python-dateutil==2.7.5
+python-social-auth==0.3.6
 python3-openid==3.1.0
 pytz==2018.7
 requests==2.20.1
