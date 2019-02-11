@@ -43,17 +43,12 @@
                 </div>
                 </div>
                     
-                
-                
-                
                 <div class="row"> 
                     {% for user in recipe.users_like.all %}
                     <div>
                         <img src="{{ MEDIA_URL }}{{ user.profile.image }}" class="img-circle">
-                        <p>{{ user.first_name }}</p>
+                        <p>{{ user.username }}</p>
                     </div>
-                    {% empty %}
-                    Nobody likes this yet.
                     {% endfor %}
                 </div>
                 {% endwith %}
@@ -66,7 +61,7 @@
                     
                     <div class="info">
                     <a href="{% url 'user_detail' recipe.cook %}" class="title">
-                    <h5 class="avatar-cook_name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook.first_name }}</h5>
+                    <h5 class="avatar-cook_name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook.username }}</h5>
                     </a>
                     </div>
                     
@@ -79,13 +74,6 @@
                     <p>{{recipe.preparation}}</p>
                     
                     <p><span class="boldtext">Cook:</span> {{ recipe.cook }} </p>
-                    
-                    
-                    
-
-                    <a href="{% url 'donation_checkout' %}" class="btn btn-primary">Donate</a>
-                    <a href="{% url 'recipes:home' %}" class="btn btn-primary">back</a>
-                    
                     
                     {% if request.user == recipe.cook %}
                     <a href="{% url 'recipes:edit_recipe' recipe.id %}" class="btn btn-primary">Edit Recipe</a>

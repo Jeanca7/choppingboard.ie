@@ -2,47 +2,38 @@
 {% load static from staticfiles %}
 
 {% block head_js %}
-{{ block.super }}
-<script type="text/javascript" src="{% static 'recipes/list.js' %}"></script>
-{% endblock %}
 
+
+
+{% endblock %}
 
 {% block content %}
+{% load thumbnail %}
 
-    <div class="container-fluid">
-    <div class="row">
     {% for recipe in recipes %}
-                    
-                    <div class="col-sm-4 col-lg-4 col-md-4 card-dim">
-                        <div class="thumbnail">
+    <div class="image-container">
+    <div class="image">
+       <a href="{{ recipe.get_absolute_url }}">
+           {% thumbnail recipe.video "320x240" crop="100%" as im %}
+           <video width="320" height="240" class="recipe_video" preload>
+               <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/mp4">
+               <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/ogg">
+            </video>
+           {% endthumbnail %}
+           </a> 
                             
-                            <div class="video">
-                            <a href="{% url 'recipes:recipe_detail' recipe.id %}">
-                            
-                            
-                            <video width="320" height="240" controls>
-                              <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/mp4">
-                              <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/ogg">
-                              Your browser does not support the video tag.
-                            </video>
-                            </a>
-                            </div>
-                            
-                            
-                            <div class="caption">
-                                <a href="{% url 'recipes:recipe_detail' recipe.id %}"><h3 class="recipe_name">{{recipe.recipe_name}}</h3></a>
-                                </div>
-                                <div>
-                                    <a href="{% url 'recipes:recipe_detail' recipe.id %}">
-                                    <h6 class="avatar-cook_name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook }}</h6>
-                                    <span class="boldtext date-views">Published on: {{ recipe.created_date.date }} - Views:{{ recipe.views }}</span>
-                                </a>
-                                </div>
-                        </div>
-                    </div>
-                    
+        <div class="info">
+            <a href="{% url 'recipes:recipe_detail' recipe.id %}"><h3 class="recipe_name">{{recipe.recipe_name}}</h3></a>
+                
+                <a href="{% url 'recipes:recipe_detail' recipe.id %}">
+                    <h6 class="avatar-cook_name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook }}</h6>
+                      <span class="boldtext date-views">Published on: {{ recipe.created_date.date }} - Views:{{ recipe.views }}</span>
+                        </a>
+                          </div>
+                             </div>
+                               </div>
     {% endfor %}
-    </div>
-    </div>
-    
+
 {% endblock %}
+
+
