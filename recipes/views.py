@@ -58,8 +58,12 @@ def recipe_list(request):
 def recipes_list(request):
     recipes = Recipe.objects.filter(created_date__lte = timezone.now())
     return render(request, "recipes/recipe/recipes_list.html", {"recipes": recipes})
-
     
+
+def cook_recipes_list(request):
+    recipes = Recipe.objects.filter(created_date__lte = timezone.now())
+    return render(request, "recipes/recipe/cook_recipes_list.html", {"recipes": recipes})
+
     
 def recipe_detail(request, id):
     recipe = get_object_or_404(Recipe, pk=id)

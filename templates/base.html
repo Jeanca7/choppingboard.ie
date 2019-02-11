@@ -44,7 +44,7 @@
           <a class="nav-link" href="{% url 'dashboard' %}">My dashboard</a>
         </li>
         <li {% if section == "my_recipes" %}class="selected"{% endif %}>
-          <a class="nav-link" href="{% url "recipes:list" %}">My recipes</a>
+          <a class="nav-link" href="{% url "recipes:cook_recipes_list" %}">My recipes</a>
         </li>
         <li {% if section == "cooks" %}class="selected"{% endif %}>
           <a class="nav-link" href="{% url "user_list" %}">Cooks</a>
