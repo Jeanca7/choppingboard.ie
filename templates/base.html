@@ -112,7 +112,7 @@
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
 <script>
-   var $recipe_video = $('.recipe_video');
+   var $recipe_video = $('#{{ recipe.id }}'); 
    $recipe_video.on('mouseenter focus', function () {
       $recipe_video.get(0).play();
    });

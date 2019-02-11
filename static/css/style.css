@@ -73,6 +73,16 @@ footer {
   box-sizing: content-box;
 }
 
+
+.videos-list .image {
+    overflow:auto;
+    float:left;
+    margin:0 10px 10px 10px;
+}
+
+
+
+
 /*additonal*/
 
 p {
