@@ -15,7 +15,7 @@
     <div class="image">
        <a href="{{ recipe.get_absolute_url }}">
            {% thumbnail recipe.video "320x240" crop="100%" as im %}
-           <video width="320" height="240" class="recipe_video" preload>
+           <video width="320" height="240" class="recipe_video" preload muted>
                <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/mp4">
                <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/ogg">
             </video>
