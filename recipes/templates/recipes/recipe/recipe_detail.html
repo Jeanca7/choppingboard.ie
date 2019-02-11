@@ -63,7 +63,13 @@
                     <h3>{{recipe.recipe_name}}</h3>
                     </div>
                     <div>
-                    <h5 class="avatar-cook_name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook }}</h5>
+                    
+                    <div class="info">
+                    <a href="{% url 'user_detail' recipe.cook %}" class="title">
+                    <h5 class="avatar-cook_name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook.first_name }}</h5>
+                    </a>
+                    </div>
+                    
                     <span class="boldtext date-views">Published on: {{ recipe.created_date.date }} - Views:{{ recipe.views }}</span>
                     <div class="thumbnail">
                         <div class="thumbnail">
