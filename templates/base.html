@@ -97,14 +97,21 @@
   <div class="container">
     <br>
     <div class="row">
+      <div class="col">
       {% block content %}
       {% load bootstrap_tags %}
       {% endblock %}
+      </div>
     </div>
   </div>
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous">
+</script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
@@ -112,16 +119,43 @@
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
 <script>
-   var $recipe_video = $('#{{ recipe.id }}'); 
-   $recipe_video.on('mouseenter focus', function () {
-      $recipe_video.get(0).play();
-   });
-   
-   $recipe_video.on('mouseout blur', function () {
-     $recipe_video.get(0).pause();
-   });
-   
+
+//hover and play for list of videos
+;!function(a){a.hoverPlay={},a.fn.hoverPlay=function(e){if(!this.length)return this;var t=a.extend(!0,{},a.hoverPlay.defaults,e);return this.each(function(){var e=a(this),o=e.get(0);"function"==typeof o.play&&(o.controls=!1,o.loop=!0,e.on("mouseover",function(){var a=e.data("hoverPlayTimeout");a||(a=setTimeout(function(){e.data("hoverPlayTimeout",null),t.callbacks.play(e,o),e.trigger("hoverPlay")},t.playDelay),e.data("hoverPlayTimeout",a))}).on("mouseout",function(){var a=e.data("hoverPlayTimeout");a&&(clearTimeout(a),e.data("hoverPlayTimeout",null)),setTimeout(function(){t.callbacks.pause(e,o),e.trigger("hoverPause")},t.pauseDelay)}).on("click",function(a){return t.callbacks.click(e,o,a)}))}),this},a.hoverPlay.defaults={playDelay:350,pauseDelay:0,callbacks:{play:function(a,e){e.play()},pause:function(a,e){e.pause()},click:function(a,e,t){t.preventDefault()}}},jQuery(document).ready(function(a){a("[data-play=hover]").hoverPlay()})}(jQuery);
+
+//time duration
+var media = document.querySelector('video');
+var timerWrapper = document.querySelector('.timer');
+var timer = document.querySelector('.timer span');
+var timerBar = document.querySelector('.timer div');
+
+media.addEventListener('timeupdate', setTime);
+
+function setTime() {
+  var minutes = Math.floor(media.currentTime / 60);
+  var seconds = Math.floor(media.currentTime - minutes * 60);
+  var minuteValue;
+  var secondValue;
+
+  if (minutes < 10) {
+    minuteValue = '0' + minutes;
+  } else {
+    minuteValue = minutes;
+  }
+
+  if (seconds < 10) {
+    secondValue = '0' + seconds;
+  } else {
+    secondValue = seconds;
+  }
+  var mediaTime = minuteValue + ':' + secondValue;
+  timer.textContent = mediaTime;
+}
+media.removeAttribute('controls');
+
 </script>
+
+
 
 <script>
     var csrftoken = Cookies.get('csrftoken');

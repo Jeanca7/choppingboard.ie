@@ -15,10 +15,14 @@
     <div class="image">
        <a href="{{ recipe.get_absolute_url }}">
            {% thumbnail recipe.video "320x240" crop="100%" as im %}
-           <video width="320" height="240" id="{{recipe.id}}" preload muted>
+           <video width="320" data-play="hover" muted>
                <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/mp4">
                <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/ogg">
             </video>
+            <div class="timer">
+              <div></div>
+                  <span aria-label="timer">00:00</span>
+            </div>
            {% endthumbnail %}
            </a> 
                             
