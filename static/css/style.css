@@ -74,24 +74,26 @@ footer {
 }
 
 
-.videos-list .image {
-    overflow:auto;
-    float:left;
-    margin:25px 20px;
+.videos-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 
+
 .timer {
+  position: absolute;
+  bottom: 110px;
+  right: 60px;
   line-height: 38px;
   font-size: 10px;
   font-family: monospace;
   text-shadow: 1px 1px 0px black;
   color: white;
   flex: 5;
-  position: absolute;
   text-align: center;
-  bottom: 110px;
-  right: 10px;
+  
 }
 
 .timer div {
@@ -305,9 +307,7 @@ ul.messages li a.close {
 
 /* images */
 
-.image{
-    position: relative;
-}
+
 
 .image-preview, .image-detail {
     max-width:300px;

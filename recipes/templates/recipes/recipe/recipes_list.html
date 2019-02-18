@@ -11,8 +11,8 @@
 {% load thumbnail %}
 
     {% for recipe in recipes %}
-    <div class="videos-list">
-    <div class="image">
+    
+    <div class="col-lg-4 col-md-6 videos-list">
        <a href="{{ recipe.get_absolute_url }}">
            {% thumbnail recipe.video "320x240" crop="100%" as im %}
            <video width="320" data-play="hover" muted>
@@ -35,7 +35,7 @@
                         </a>
                           </div>
                              </div>
-                               </div>
+                               
     {% endfor %}
 
 {% endblock %}
