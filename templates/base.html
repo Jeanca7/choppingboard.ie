@@ -127,6 +127,13 @@ function stopvid(x){
   x.pause();
 }
 
+$('.recipe-video').each(function (index, element){
+  var sp=$(this).duration;
+  document.getElementsByClassName("dur").innerHTML = sp;
+  
+});
+
+
 </script>
 
 

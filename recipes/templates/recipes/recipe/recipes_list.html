@@ -17,11 +17,13 @@
        <div class="video-info-container">
           <a href="{{ recipe.get_absolute_url }}">
            <div class="video-container">
-           <video width="350" muted class="recipe-video" onmouseover="playvid(this)" onmouseout="stopvid(this)" preload="auto">
+           <video width="350" muted class="recipe-video" onmouseover="playvid(this)" onmouseout="stopvid(this)" preload="auto" controls>
                <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/mp4">
                <source src="{{MEDIA_URL}}{{recipe.video}}" type="video/ogg">
                Your browser does not support the video tag.
             </video>
+             <div class="dur">
+            </div>
             </div>
           
                             
