@@ -47,7 +47,6 @@
                     {% for user in recipe.users_like.all %}
                     <div>
                         <img src="{{ MEDIA_URL }}{{ user.profile.image }}" class="img-circle">
-                        <p>{{ user.username }}</p>
                     </div>
                     {% endfor %}
                 </div>

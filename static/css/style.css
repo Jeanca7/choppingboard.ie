@@ -14,6 +14,8 @@ footer {
     color: #A9A9A9;
 }
 
+
+
 .icon-bar {
     background-color: #fff;
 }
@@ -80,7 +82,20 @@ footer {
   position: relative;
 }
 
+.video-info-container{
+    display: flex;
+    justify-content: space-around;
+}
 
+
+.video-container{
+    align-items: center;
+    justify-content: center;
+}
+
+.info-container{
+   flex: 0 1 30%;
+}
 
 .timer {
   position: absolute;
