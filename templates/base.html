@@ -88,9 +88,7 @@
 
   {% if messages %} {% for message in messages %}
   <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %}" role="alert" id="message_alert">
-    {{ message }}<button type="button" class="close" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
+    {{ message }}<button type="button" class="close" aria-label="Close" id="hide"><span aria-hidden="true">&times;</span></button>
   </div>
   {% endfor %} {% endif %}
 
@@ -119,21 +117,12 @@
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
 <script>
-function playvid(x){
-  x.play();
-}
 
-function stopvid(x){
-  x.pause();
-}
-
-$('.recipe-video').each(function (index, element){
-  var sp=$(this).duration;
-  document.getElementsByClassName("dur").innerHTML = sp;
-  
-});
-
-
+$(document).ready(function(){
+    $("#hide").click(function(){
+     $("#message_alert").hide(); 
+    });
+  });
 </script>
 
 

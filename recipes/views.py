@@ -31,7 +31,7 @@ def delete_recipe(request, id):
     recipe = get_object_or_404(Recipe, pk=id)
     recipe.delete()
     messages.success(request, 'recipe deleted successfully')
-    return redirect("/")
+    return redirect('recipes:cook_recipes_list')
 
 
 

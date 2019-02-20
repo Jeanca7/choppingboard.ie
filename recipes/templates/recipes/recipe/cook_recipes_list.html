@@ -9,8 +9,9 @@
 
 {% block content %}
 
-    <div class="container-fluid">
-    <div class="row">
+    <div class="col">
+    
+    
     {% for recipe in recipes %}
         {% if recipe.cook == request.user %}
                     <div class="col-sm-4 col-lg-4 col-md-4 card-dim">
@@ -40,8 +41,11 @@
                                 </div>
                         </div>
                     </div>
-        {% endif %}               
+        {% endif %}
     {% endfor %}
+    
+        <a href="{% url "recipes:cook_recipes_list" %}">Add a recipe here!</a>
+    
     </div>
     </div>
     
