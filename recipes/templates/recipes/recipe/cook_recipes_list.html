@@ -9,6 +9,7 @@
 {% block content %}
 {% load thumbnail %}
 
+<div class="row">
     {% for recipe in recipes %}
         {% if recipe.cook == request.user %}
     <div class="im-container">
@@ -26,10 +27,10 @@
       <span class="boldtext date-views">Published on: {{ recipe.created_date.date }} - Views:{{ recipe.views }}</span>
       </a>
     </div>
-  </div>    
+  </div>
         {% endif %}
     {% endfor %}
-    
+    </div>
     
         <a class="btn btn-success" href="{% url "recipes:show_recipe_form" %}" role="button" >Add a recipe here!</a>
 

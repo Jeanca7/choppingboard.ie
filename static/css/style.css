@@ -270,12 +270,11 @@ input, textarea {
     font-size:14px;
 }
 input[type=submit], a.button {
-    font-weight:bold;
-    background:#12c064;
-    color:#fff;
+    color:#aaa;
+    border:3px solid #bbb;
+    border-radius:26px;
     padding:10px 20px;
-    font-size:14px;
-    text-transform:uppercase;
+    margin:20px 10px 0;
 }
 .errorlist {
     color:#cc0033;
@@ -354,7 +353,9 @@ ul.messages li a.close {
 
 /* images */
 
-
+.image-size{
+    justify-content: center;
+}
 
 .image-preview, .image-detail {
     max-width:300px;
@@ -366,13 +367,32 @@ ul.messages li a.close {
     padding:20px 0;
     overflow:auto;
 }
-.count {
-    color:#aaa;
-    border:3px solid #bbb;
-    border-radius:26px;
-    padding:10px 20px;
-    margin:20px 10px 0;
+
+
+.heart{
+    color: red;
 }
+
+.count{
+    word-spacing: 7px;
+}
+
+
+.total{
+    color: #aaa;
+    font-size: x-large;
+}
+
+
+.recipe-layout{
+    background-color: #F5F5F5;
+    border-radius: 25px;
+    padding-left: 10px;
+}
+
+
+
+
 a.like, a.follow { float:right; margin-top:-8px; }
 
 #image-list { overflow:auto; }

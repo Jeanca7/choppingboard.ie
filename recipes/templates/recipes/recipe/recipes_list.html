@@ -8,6 +8,7 @@
 {% block content %}
 {% load thumbnail %}
 
+<div class="row">
     {% for recipe in recipes %}
     <div class="im-container">
     <a href="{{ recipe.get_absolute_url }}">
@@ -26,7 +27,7 @@
     </div>
   </div>
     {% endfor %}
-
+</div>
 {% endblock %}
 
 
