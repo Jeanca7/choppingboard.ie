@@ -1,7 +1,7 @@
 {% load thumbnail %}
 
 {% for recipe in recipes %}
-  <div class="image">
+    <div class="im-container">
     <a href="{{ recipe.get_absolute_url }}">
       {% thumbnail recipe.image "300x300" crop="100%" as im %}
         <a href="{{ recipe.get_absolute_url }}">
@@ -9,9 +9,11 @@
         </a>
       {% endthumbnail %}
     </a>
-    <div class="info">
-      <a href="{{ recipe.get_absolute_url }}" class="title">
-        {{ recipe.recipe_name }}
+    <div class="recipe-description">
+      <a href="{{ recipe.get_absolute_url }}" class="recipe-link">
+        <h3>{{ recipe.recipe_name }}</h3>
+      <h6 class="avatar-cook-name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook }}</h6>
+      <span class="boldtext date-views">Published on: {{ recipe.created_date.date }} - Views:{{ recipe.views }}</span>
       </a>
     </div>
   </div>

@@ -41,7 +41,7 @@ footer {
     width: 300px;
 }
 
-.avatar-cook_name{
+.avatar-cook-name{
     margin-bottom: 0;
 }
 
@@ -130,6 +130,38 @@ footer {
         );
 }
 
+
+.im-container{
+    padding: 2px 0;
+    margin: 25px 30px;
+}
+
+
+.recipe-description{
+    background:#eee;
+    padding: 3px 5px;
+    border-radius: 0px 0px 30px 5px;
+    height: 125px;
+    width: 300px;
+}
+
+
+.recipe-description h3{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+}
+
+.im-container a{
+    text-decoration: none;
+    color: red;
+}
+
+.im-container a:hover{
+    color: red;
+    text-decoration: none;
+}
 
 
 /*additonal*/

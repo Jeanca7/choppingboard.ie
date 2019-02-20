@@ -21,12 +21,12 @@
     {% if request.user not in user.followers.all %}
     Follow
     {% else %}
-    Unfollow
+    Unfollow  
     {% endif %}
 </a>
-<div id="image-list" class="image-container">
-    {% include "recipes/recipe/list_ajax.html" with recipes=user.recipes_created.all %}
-</div>
+
+{% include "recipes/recipe/list_ajax.html" with recipes=user.recipes_created.all %}
+
 {% endwith %}
 {% endblock %}
 
