@@ -77,6 +77,10 @@ footer {
 }
 
 
+video {
+  max-width: 100%;
+}
+
 .videos-list {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -92,6 +96,10 @@ footer {
 .video-container{
     align-items: center;
     justify-content: center;
+}
+
+.video-s{
+    margin-bottom: 20px;
 }
 
 .info-container{
@@ -356,6 +364,7 @@ ul.messages li a.close {
 
 .image-size{
     justify-content: center;
+    margin: 10px;
 }
 
 .image-preview, .image-detail {
@@ -375,7 +384,7 @@ ul.messages li a.close {
 }
 
 .count{
-    word-spacing: 15px;
+    word-spacing: 7px;
 }
 
 
@@ -472,7 +481,28 @@ img.user-detail {
 
 .likes{
     margin-top: 15px;
-    margin-bottom: 20px
+    margin-bottom: 10px
 }
 
+.img-like{
+    margin-bottom: 20px;
+}
 
+.img-like-circle{
+    border-radius: 50%;
+    height: 38px;
+    width: 38px;
+    border: 1px;
+}
+
+.main-text{
+    color: #808080;
+}
+
+.like-button{
+    color:#aaa;
+    border:3px solid #bbb;
+    border-radius:26px;
+    padding:10px 20px;
+    margin:5px 70px 0;
+}
