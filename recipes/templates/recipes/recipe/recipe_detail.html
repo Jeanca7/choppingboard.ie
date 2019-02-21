@@ -8,6 +8,7 @@
 
 <div class="row justify-content-center">
     <div class="column-xs-12">
+        
          <div class="row justify-content-center">
                     {% thumbnail recipe.image "600x500" crop="100%" as im %}
                         <img src="{{ im.url }}" class="img-responsive image-size img-thumbnail">
@@ -21,6 +22,7 @@
                   Your browser does not support the video tag.
                 </video>
                 </div> 
+                
         
             <div class="row cook-desc">    
                     <a href="{% url 'user_detail' recipe.cook %}">
@@ -57,12 +59,13 @@
                 {% endwith %}
                 </span>
                 </div>
+                   
                     
                     <span class="main-text"><i class="fas fa-utensils"></i> Type of cuisine:</span>
-                    <p>{{recipe.cusine_type}}</p>
+                    <p class="main-p">{{recipe.cusine_type}}</p>
                     
                     <span class="main-text"><i class="fas fa-apple-alt"></i> Diet type:</span>
-                    <p>{{recipe.diet_type}}</p>
+                    <p class="main-p">{{recipe.diet_type}}</p>
                     
                     <span class="main-text"><i class="fas fa-carrot"></i> Ingredients:</span><br>
                     <p class="recipe-layout">{{recipe.ingredients}}</p>
