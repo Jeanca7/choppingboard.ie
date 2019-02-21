@@ -8,6 +8,7 @@
 {% block content %}
 {% load thumbnail %}
 
+
 <div class="row">
     {% for recipe in recipes %}
     <div class="im-container">
@@ -19,15 +20,16 @@
       {% endthumbnail %}
     </a>
     <div class="recipe-description">
-      <a href="{{ recipe.get_absolute_url }}" class="recipe-link">
+      <a href="{{ recipe.get_absolute_url }}">
         <h3>{{ recipe.recipe_name }}</h3>
       <h6 class="avatar-cook-name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook }}</h6>
-      <span class="boldtext date-views">Published on: {{ recipe.created_date.date }} - Views:{{ recipe.views }}</span>
+      <span class="date-views">Published on: {{ recipe.created_date.date }} - Views:{{ recipe.views }}</span>
       </a>
     </div>
   </div>
     {% endfor %}
 </div>
+
 {% endblock %}
 
 

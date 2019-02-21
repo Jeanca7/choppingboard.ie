@@ -43,6 +43,7 @@ footer {
 
 .avatar-cook-name{
     margin-bottom: 0;
+    text-transform: capitalize;
 }
 
 .card-dim{
@@ -374,7 +375,7 @@ ul.messages li a.close {
 }
 
 .count{
-    word-spacing: 7px;
+    word-spacing: 15px;
 }
 
 
@@ -457,3 +458,21 @@ img.user-detail {
     font-style:italic;
     color:#ccc;
 }
+
+
+.cook-desc a{
+    text-decoration: none;
+    color: red;
+}
+
+.cook-desc a:hover{
+    color: red;
+    text-decoration: none;
+}
+
+.likes{
+    margin-top: 15px;
+    margin-bottom: 20px
+}
+
+
