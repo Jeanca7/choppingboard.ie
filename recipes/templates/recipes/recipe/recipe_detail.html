@@ -9,9 +9,9 @@
 <div class="row justify-content-center">
     <div class="column-xs-12">
         
-         <div class="row">
+         <div class="row justify-content-center">
                     {% thumbnail recipe.image "500x400" crop="100%" as im %}
-                        <img src="{{ im.url }}" class="responsive image-size img-thumbnail">
+                        <img src="{{ im.url }}" class="image-size img-thumbnail">
                     {% endthumbnail %}
         </div>
         
@@ -32,7 +32,7 @@
             </div>
                     
                 <div class="row">
-                    <span class="date-views main-text">Published on: {{ recipe.created_date.date }} - Views:{{ recipe.views }}</span>
+                    <span class="main-text">Published on: {{ recipe.created_date.date }} - Views:{{ recipe.views }}</span>
                 </div>
                 
                 <div class="row likes">    
