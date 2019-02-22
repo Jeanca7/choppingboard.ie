@@ -81,20 +81,31 @@ video {
 
 @media (max-width: 40rem) {
     video{
-        width: 365px;
+        width: 320px;
+        height: 190px;
     }
     .image-size{
-        width: 365px;
+        width: 320px;
+        height: 380px;
+    }
+    
+    .recipe-content{
+        max-width: 320px;
     }
 }
 
 
 @media (max-width: 320px) {
     video{
-        width: 320px;
+        width: 280px;
+        height: 190px;
     }
     .image-size{
-        width: 320px;
+        width: 280px;
+        height: 340px;
+    }
+    .recipe-content{
+        max-width: 280px;
     }
 }
 
@@ -382,7 +393,7 @@ ul.messages li a.close {
 
 .image-size{
     justify-content: center;
-    margin: 10px;
+    margin: 10px 0;
 }
 
 .image-preview, .image-detail {
@@ -416,8 +427,7 @@ ul.messages li a.close {
     background-color: #F5F5F5;
     border-radius: 25px;
     padding: 10px;
-    max-width: 590px;
-    margin: 10px;
+    margin: 10px 0;
 }
 
 
@@ -527,7 +537,7 @@ img.user-detail {
     border:3px solid #bbb;
     border-radius:26px;
     padding:10px 20px;
-    margin:5px 70px 0;
+    margin-left: 30px;
 }
 
 .main-p{
@@ -535,5 +545,11 @@ img.user-detail {
 }
 
 .recipe-content{
-    padding-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 600px
+}
+
+.recipe-info{
+    padding-left: 10px;
 }

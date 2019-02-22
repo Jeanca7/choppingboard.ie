@@ -25,6 +25,7 @@
                 
         
         <div class="recipe-content">
+            <div class="recipe-info">
             <div class="row cook-desc">    
                     <a href="{% url 'user_detail' recipe.cook %}">
                     <h5 class="avatar-cook-name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook.username }}</h5>
@@ -49,6 +50,7 @@
                     Unlike
                     {% endif %}
                 </a>
+                
                 {% endif %}
                 </div>
                 
@@ -60,7 +62,7 @@
                 {% endwith %}
                 </span>
                 </div>
-                   
+            </div>
                     
                     <span class="main-text"><i class="fas fa-utensils"></i> Type of cuisine:</span>
                     <p class="main-p">{{recipe.cusine_type}}</p>
