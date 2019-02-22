@@ -79,6 +79,7 @@ footer {
 
 video {
   max-width: 100%;
+  min-width: 365px;
 }
 
 .videos-list {
@@ -100,6 +101,7 @@ video {
 
 .video-s{
     margin-bottom: 20px;
+    min-width: 365px;
 }
 
 .info-container{
@@ -365,6 +367,7 @@ ul.messages li a.close {
 .image-size{
     justify-content: center;
     margin: 10px;
+    min-width: 365px;
 }
 
 .image-preview, .image-detail {
@@ -512,4 +515,13 @@ img.user-detail {
 
 .main-p{
     margin-left: 10px;
+}
+
+.recipe-content{
+    padding-left: 20px;
+}
+
+.responsive{
+    width: 100%;
+    height: auto;
 }
