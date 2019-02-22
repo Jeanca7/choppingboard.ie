@@ -26,23 +26,18 @@ def submit_donation(request):
         #grab the money and run
         donation_quantity = Decimal(request.POST.get('donation_quantity'))
         stripe_token=donation_form.cleaned_data['stripe_id'] # cleaned_data gives me the digits of the card 
-
-        try:
-
-            total_in_cent = int(donation_quantity*100)
-            donor = stripe.Charge.create(
-                amount=total_in_cent,
-                currency="EUR",
-                description="Dummy Transaction", 
-                card=stripe_token,
-            )
-
-        except stripe.error.CardError:
-            print("Declined")
-            messages.error(request, "Your card was declined!")
+   
+        total_in_cent = int(donation_quantity*100)
+        donor = stripe.Charge.create(
+        amount=total_in_cent,
+        currency="EUR",
+        description="Dummy Transaction", 
+        card=stripe_token,
+        )
 
         if donor.paid:
-            print("Paid")
-            messages.error(request, "You have successfully paid")
-        
+            messages.success(request, "You have successfully paid")
         return redirect("/") 
+    
+    else:
+        messages.error(request, "Your card was declined!")

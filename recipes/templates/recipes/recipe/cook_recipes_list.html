@@ -2,17 +2,17 @@
 {% load static from staticfiles %}
 
 {% block head_js %}
-<script type="text/javascript" src="{% static 'recipes/list.js' %}"></script>
+
 {% endblock %}
 
 
 {% block content %}
 {% load thumbnail %}
 
-<div class="row">
+<div class="row justify-content-center">
     {% for recipe in recipes %}
         {% if recipe.cook == request.user %}
-    <div class="im-container">
+    <div class="im-container col-xs-12">
     <a href="{{ recipe.get_absolute_url }}">
       {% thumbnail recipe.image "300x300" crop="100%" as im %}
         <a href="{{ recipe.get_absolute_url }}">
@@ -31,7 +31,8 @@
         {% endif %}
     {% endfor %}
     </div>
-    
+      
+        <div class="row justify-content-center">
         <a class="btn btn-success" href="{% url "recipes:show_recipe_form" %}" role="button" >Add a recipe here!</a>
-
+        </div>
 {% endblock %}

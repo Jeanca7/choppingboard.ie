@@ -171,7 +171,7 @@ video {
 
 .im-container{
     padding: 2px 0;
-    margin: 25px 30px;
+   margin: 20px 10px;
 }
 
 
@@ -307,13 +307,8 @@ input, textarea {
     padding:6px 10px;
     font-size:14px;
 }
-input[type=submit], a.button {
-    color:#aaa;
-    border:3px solid #bbb;
-    border-radius:26px;
-    padding:10px 20px;
-    margin:20px 10px 0;
-}
+
+
 .errorlist {
     color:#cc0033;
     float:left;
@@ -460,6 +455,7 @@ a.like, a.follow { float:right; margin-top:-8px; }
 }
 
 /* users */
+
 #people-list img {
     width:180px;
     height:180px;
@@ -467,19 +463,17 @@ a.like, a.follow { float:right; margin-top:-8px; }
     margin-bottom:20px;
 }
 #people-list .user {
+    margin: 15px;
     width:180px;
-    float:left;
-    overflow:auto;
     padding:10px;
 }
+
 #people-list .info { text-align:center; }
+
 img.user-detail {
     border-radius:50%;
-    float:left;
 }
 .profile-info {
-    float:left;
-    overflow:auto;
     margin-right:20px;
 }
 .image-container { margin-top:40px; }
@@ -553,3 +547,31 @@ img.user-detail {
 .recipe-info{
     padding-left: 10px;
 }
+
+.cook-img{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+}
+
+
+.cook-avatar-list{
+margin: 15px 20px;
+text-align: center;
+text-transform: uppercase;
+}
+
+.cook-avatar-list a{
+    text-decoration: none;
+    color: red;
+}
+
+
+.cook-username{
+   margin-top: 3px;
+}
+
+.margin-form{
+    margin-top: 50px;
+}
+

@@ -9,9 +9,9 @@
 {% load thumbnail %}
 
 
-<div class="row">
+<div class="row justify-content-center">
     {% for recipe in recipes %}
-    <div class="im-container">
+    <div class="im-container col-xs-12">
     <a href="{{ recipe.get_absolute_url }}">
       {% thumbnail recipe.image "300x300" crop="100%" as im %}
         <a href="{{ recipe.get_absolute_url }}">

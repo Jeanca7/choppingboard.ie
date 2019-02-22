@@ -5,17 +5,17 @@
 
 {% block content %}
 <h1>Cooks</h1>
-<div id="people-list">
+<div class="row justify-content-center">
     {% for user in users %}
-    <div class="user">
+    <div class="col-xs-12 cook-avatar-list">
         <a href="{{ user.get_absolute_url }}">
             {% thumbnail user.profile.image "180x180" crop="100%" as im %}      
-            <img src="{{ im.url }}">
+            <img src="{{ im.url }}" class="cook-img">
             {% endthumbnail %}
         </a>
-        <div class="info">
-            <a href="{{ user.get_absolute_url }}" class="title">
-                {{ user.get_full_name }}
+        <div class="cook-username">
+            <a href="{{ user.get_absolute_url }}">
+                {{ user.username }}
             </a>
         </div>
     </div>
