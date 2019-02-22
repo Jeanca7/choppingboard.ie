@@ -9,7 +9,7 @@
 <div class="row justify-content-center">
     <div class="column-xs-12">
         
-         <div class="row justify-content-center">
+         <div class="row">
                     {% thumbnail recipe.image "600x500" crop="100%" as im %}
                         <img src="{{ im.url }}" class="img-responsive image-size img-thumbnail">
                     {% endthumbnail %}
@@ -24,6 +24,8 @@
                 </div> 
                 
         
+        <div class="row justify-content-center">
+        <div class="column">
             <div class="row cook-desc">    
                     <a href="{% url 'user_detail' recipe.cook %}">
                     <h5 class="avatar-cook-name"><img src="{{ MEDIA_URL }}{{ recipe.cook.profile.image }}" class="img-circle"> {{ recipe.cook.username }}</h5>
@@ -71,13 +73,15 @@
                     <p class="recipe-layout">{{recipe.ingredients}}</p>
                     
                     <span class="main-text"><i class="fas fa-hamburger"></i> Preparation:</span>
-                    <p class="recipe-layout w3-panel">{{recipe.preparation}}</p>
+                    <p class="recipe-layout">{{recipe.preparation}}</p>
                 
                     
                     {% if request.user == recipe.cook %}
                     <a href="{% url 'recipes:edit_recipe' recipe.id %}" class="btn btn-primary">Edit Recipe</a>
                     <a href="{% url 'recipes:delete_recipe' recipe.id %}" class="btn btn-primary">Delete Recipe</a>
                     {% endif %}
+            </div>
+        </div>
     </div>
 </div>                
 
