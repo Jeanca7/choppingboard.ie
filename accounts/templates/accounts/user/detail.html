@@ -4,30 +4,44 @@
 {% block title %} {{ user.get_full_name }} {% endblock %}
 
 {% block content %}
-<h1>{{ user.get_full_name }}</h1>
-<div class="profile-info">
-    {% thumbnail user.profile.image "180x180" crop="100%" as im %} 
-    <img src="{{ im.url }}" class="user-detail">
-    {% endthumbnail %}
+<div class="profile-container">
+<div class="back-img">
+<img src="{{ MEDIA_URL }}{{ user.profile.background_image }}" class="img-fluid profile-background">
 </div>
 
+<div class="profile">
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="row justify-content-center">
+                {% thumbnail user.profile.image "180x180" crop="100%" as im %} 
+                <img src="{{ im.url }}" class="user-detail">
+                {% endthumbnail %}
+                </div>
+                <div class="row justify-content-center">
+                    {% with total_followers=user.followers.count %}
+                    <span class="count follow-info"><span class="total">{{ total_followers }}</span>
+                        follower{{ total_followers|pluralize }}
+                        
+                    <a href="#" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follower-button follow">
+                        {% if request.user not in user.followers.all %}
+                        Follow
+                        {% else %}
+                        Unfollow  
+                        {% endif %}
+                    </a>
+                    </span>
+                </div>
+                <h1>{{ user.get_full_name }}</h1>
+                
+                {% include "recipes/recipe/list_ajax.html" with recipes=user.recipes_created.all %}
+                {% endwith %}
+</div>
+</div>
+</div>
+</div>
+</div>
 
-{% with total_followers=user.followers.count %}
-<span class="count">
-    <span class="total">{{ total_followers }}</span>
-    follower{{ total_followers|pluralize }}
-</span>
-<a href="#" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follow button">
-    {% if request.user not in user.followers.all %}
-    Follow
-    {% else %}
-    Unfollow  
-    {% endif %}
-</a>
-
-{% include "recipes/recipe/list_ajax.html" with recipes=user.recipes_created.all %}
-
-{% endwith %}
 {% endblock %}
 
 {% block domready %}

@@ -4,29 +4,37 @@
 {% block title %}Log-in{% endblock %}
 
 {% block content %}
-<h1>Login</h1>
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% else %}
+<div class="container">
+  <h1>Login</h1>
 
-<p>Please, use the following form to log-in. If you don't have an account <a href="{% url "register" %}">register here.</a></p>
-{% endif %}
+  {% if form.errors %}
+  <p>Your username and password didn't match. Please try again.</p>
+  {% else %}
+  
+  <p>Please, use the following form to log-in. If you don't have an account <a href="{% url "register" %}">register here.</a></p>
+  {% endif %}
 
-<div class="login-form">
+  <div class="row justify-content-center margin-form">
+    <div class="col-md-5">
+      
   <form action="{% url 'login' %}" method="post">
-    {{ form.as_p }}
+    {{ form | as_bootstrap }}
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ next }}" />
     <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
-    <p><input type="submit" value="log-in"></p>
+    <p><input type="submit" value="log-in" class="btn btn-success"></p>
   </form>
   <div class="social">
   <ul>
-    <li class="facebook"><a href="{% url "social:begin" "facebook" %}">Sign in with Facebook</a></li>
-    <li class="google"><a href="{% url "social:begin" "google-oauth2" %}">Sign in with Google</a></li>
-    <li class="facebook"><a href="{% url 'social:begin' backend='linkedin-oauth2' %}">Sign in with LinkedIn</a></li>
+    <li class="facebook"><a href="{% url "social:begin" "facebook" %}"><i class="fab fa-facebook-square"></i> Sign in with Facebook</a></li>
+    <li class="google"><a href="{% url "social:begin" "google-oauth2" %}"><i class="fab fa-google-plus"></i> Sign in with Google</a></li>
+    <li class="linkedin"><a href="{% url 'social:begin' backend='linkedin-oauth2' %}"><i class="fab fa-linkedin"></i> Sign in with LinkedIn</a></li>
   </ul>
 </div>
+
 </div>
+</div>
+</div>
+
 {% endblock %}
 

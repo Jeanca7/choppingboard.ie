@@ -92,6 +92,15 @@ video {
     .recipe-content{
         max-width: 320px;
     }
+    
+    .user-detail{
+        height: 130px;
+        width: 130px;
+    }
+    
+    .profile{
+        top: 40px;
+    }
 }
 
 
@@ -107,8 +116,24 @@ video {
     .recipe-content{
         max-width: 280px;
     }
+    
+    .user-detail{
+        height: 120px;
+        width:120px;
+    }
 }
 
+
+@media (min-width: 700px){
+    .user-detail{
+        height: 180px;
+        width: 180px;
+    }
+    
+    .profile{
+        top: 150px;
+    }
+}
 
 .videos-list {
   margin-top: 20px;
@@ -379,9 +404,9 @@ ul.messages li a.close {
     display:block;
     color:#fff;
 }
-.social li.facebook { background:#3b5399; }
-.social li.twitter { background:#00cffa; }
-.social li.google { background:#de1710; }
+.social li.facebook { background:#3b5998; }
+.social li.linkedin { background:#0077B5; }
+.social li.google { background:#db4a39; }
 
 
 /* images */
@@ -472,11 +497,15 @@ a.like, a.follow { float:right; margin-top:-8px; }
 
 img.user-detail {
     border-radius:50%;
+    border: 2px solid white;
 }
 .profile-info {
     margin-right:20px;
 }
+
+
 .image-container { margin-top:40px; }
+
 
 /* actions */
 .action {
@@ -575,3 +604,47 @@ text-transform: uppercase;
     margin-top: 50px;
 }
 
+.follower-button{
+    color:#aaa;
+    border:3px solid #bbb;
+    border-radius:26px;
+    padding:10px 20px;
+    margin-left: 30px;
+}
+
+.profile-container{
+    position: relative;
+}
+
+.profile{
+    position: absolute;
+    left: 50px;
+    right: 50px;
+}
+
+.profile-background{
+    overflow: hidden;
+    min-height:100px;
+}
+
+.back-img{
+    padding-left: 0px;
+    padding-right: 0px;
+    max-height:250px;
+    overflow:hidden;
+}
+
+@media (max-width: 40rem) {
+.back-img{
+    height:100px;
+}
+}
+
+
+.follow-info{
+    margin: 20px 0;
+}
+
+.add-recipe{
+    margin: 40px 0;
+}

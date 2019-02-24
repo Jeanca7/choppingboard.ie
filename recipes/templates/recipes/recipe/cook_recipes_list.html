@@ -9,6 +9,7 @@
 {% block content %}
 {% load thumbnail %}
 
+<div class="container">
 <div class="row justify-content-center">
     {% for recipe in recipes %}
         {% if recipe.cook == request.user %}
@@ -33,6 +34,7 @@
     </div>
       
         <div class="row justify-content-center">
-        <a class="btn btn-success" href="{% url "recipes:show_recipe_form" %}" role="button" >Add a recipe here!</a>
+        <a class="btn btn-success add-recipe" href="{% url "recipes:show_recipe_form" %}" role="button" >Add a recipe here!</a>
         </div>
+</div>
 {% endblock %}

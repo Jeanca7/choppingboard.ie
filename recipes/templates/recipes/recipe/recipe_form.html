@@ -2,14 +2,16 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-<h1>Add a recipe</h1>
+<div class="container">
+<h1>Recipe</h1>
 <div class="row justify-content-center margin-form">
     <div class="col-md-9">
     <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}  <!--private-->
+        {% csrf_token %} 
         {{ form | as_bootstrap }}
         <input type="submit" class="btn btn-success"/>
     </form>
-        </div>
     </div>
+</div>
+</div>
 {% endblock %}

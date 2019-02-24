@@ -64,7 +64,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'choppingboard.urls'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailAuthBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 AUTHENTICATION_BACKENDS = [

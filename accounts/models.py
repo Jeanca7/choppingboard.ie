@@ -8,6 +8,7 @@ class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     date_of_birth = models.DateField(blank=True, null=True)
     image = models.ImageField(upload_to="avatars", default="avatars/anonymous.png", blank=True)
+    background_image = models.ImageField(upload_to="backgrounds", default="backgrounds/background.jpg", blank=True)
     
     
     def __str__(self):
