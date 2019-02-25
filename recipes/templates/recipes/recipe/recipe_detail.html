@@ -39,6 +39,7 @@
                 
                 <div class="row likes">    
                 {% with total_likes=recipe.users_like.count users_like=recipe.users_like.all %}
+                <p>
                 <span class="count">
                     <i class="fas fa-heart fa-2x heart"></i> <span class="total likes-number">{{ total_likes }}</span>
                 
@@ -53,6 +54,7 @@
                 
                 {% endif %}
                 </span>
+                </p>
                 </div>
                 
                 <div class="row img-like">
