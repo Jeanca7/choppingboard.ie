@@ -11,6 +11,7 @@
   <title>Cooking Recipes | ChoppingBoard.ie</title>
 
   {% block head_style %}
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|PT+Sans+Caption" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
@@ -27,33 +28,34 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <a class="navbar-brand" href="/">ChoppingBoard.ie</a>
+    <a class="navbar-brand" href="/">
+      ChoppingBoard.ie</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          <a {% if section == "home" %}class="selected"{% endif %} class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
-      </ul>
+        </ul>
       {% if user.is_authenticated %}
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'dashboard' %}">My dashboard</a>
-        </li>
-        <li {% if section == "my_recipes" %}class="selected"{% endif %}>
-          <a class="nav-link" href="{% url "recipes:cook_recipes_list" %}">My recipes</a>
-        </li>
-        <li {% if section == "cooks" %}class="selected"{% endif %}>
-          <a class="nav-link" href="{% url "user_list" %}">Cooks</a>
+          <a {% if section == "dashboard" %}class="selected"{% endif %} class="nav-link" href="{% url 'dashboard' %}">My dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url "recipes:show_recipe_form" %}">Add a recipe</a>
+          <a {% if section == "cook_recipes" %}class="selected"{% endif %} class="nav-link" href="{% url "recipes:cook_recipes_list" %}">My recipes</a>
         </li>
         <li class="nav-item">
-        <a href="{% url 'donation_checkout' %}" class="btn btn-primary">Donate</a>
+          <a {% if section == "cooks" %}class="selected"{% endif %} class="nav-link" href="{% url "user_list" %}">Cooks</a>
+        </li>
+        <li class="nav-item">
+          <a {% if section == "add_recipe" %}class="selected"{% endif %} class="nav-link" href="{% url "recipes:show_recipe_form" %}">Add a recipe</a>
+        </li>
+        <li class="nav-item">
+        <a {% if section == "donate" %}class="selected"{% endif %} class="nav-link" href="{% url 'donation_checkout' %}">Donate</a>
         </li>
       </ul>
 
@@ -92,7 +94,6 @@
   </div>
   {% endfor %} {% endif %}
 
-  
 
       {% block content %}
       {% load bootstrap_tags %}

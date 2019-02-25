@@ -13,7 +13,7 @@ def donation_checkout(request):
     donation_form = MakeDonationForm()
     donor_form=DonorForm()
     
-    context = {'donation_form':donation_form, 'donor_form':donor_form, 'publishable': settings.STRIPE_PUBLISHABLE_KEY} 
+    context = {'section': 'donate', 'donation_form':donation_form, 'donor_form':donor_form, 'publishable': settings.STRIPE_PUBLISHABLE_KEY} 
     return render(request, "donation/view_donation.html", context)
     
 def submit_donation(request):

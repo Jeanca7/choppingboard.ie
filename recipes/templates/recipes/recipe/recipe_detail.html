@@ -79,8 +79,10 @@
                 
                     
                     {% if request.user == recipe.cook %}
+                    <div class="edi_del_btn">
                     <a href="{% url 'recipes:edit_recipe' recipe.id %}" class="btn btn-primary">Edit Recipe</a>
-                    <a href="{% url 'recipes:delete_recipe' recipe.id %}" class="btn btn-primary">Delete Recipe</a>
+                    <a href="{% url 'recipes:delete_recipe' recipe.id %}" class="btn btn-danger">Delete Recipe</a>
+                    </div>
                     {% endif %}
            </div>
     </div>
