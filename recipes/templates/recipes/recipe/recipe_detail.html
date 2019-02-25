@@ -56,12 +56,12 @@
                 </div>
                 
                 <div class="row img-like">
-                <span>
+                
                 {% for user in recipe.users_like.all %}
                         <img src="{{ MEDIA_URL }}{{ user.profile.image }}" class="img-like-circle">
                     {% endfor %}
                 {% endwith %}
-                </span>
+                
                 </div>
             </div>
                     
