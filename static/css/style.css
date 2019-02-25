@@ -445,7 +445,7 @@ ul.messages li a.close {
 
 
 
-a.like, a.follow { margin-top:-8px; }
+a.like, a.follow { margin-top:-8px; float: left;}
 
 #image-list { overflow:auto; }
 #image-list .image {
