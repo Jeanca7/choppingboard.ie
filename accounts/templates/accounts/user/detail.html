@@ -18,19 +18,25 @@
                 <img src="{{ im.url }}" class="user-detail">
                 {% endthumbnail %}
                 </div>
-                <div class="row justify-content-center">
+                
+                
+                <div class="row justify-content-center follow-info">
+                    <p>
                     {% with total_followers=user.followers.count %}
-                    <span class="count follow-info"><span class="total">{{ total_followers }}</span>
-                        follower{{ total_followers|pluralize }}
-                    <a href="#" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follower-button follow">
+                    <span class="count"><span class="total">{{ total_followers }}</span> follower{{ total_followers|pluralize }}
+                    <a href="#" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follower-button follow"> 
                         {% if request.user not in user.followers.all %}
                         Follow
                         {% else %}
                         Unfollow  
                         {% endif %}
                     </a>
+                    
                     </span>
+                    </p>
                 </div>
+                
+                
                 <h1>{{ user.get_full_name }}</h1>
                 
                 {% include "recipes/recipe/list_ajax.html" with recipes=user.recipes_created.all %}

@@ -429,11 +429,6 @@ ul.messages li a.close {
 }
 
 
-.total{
-    color: #aaa;
-    font-size: x-large;
-}
-
 
 .recipe-layout{
     background-color: #F5F5F5;
@@ -447,6 +442,9 @@ ul.messages li a.close {
 
 a.like, a.follow { margin-top:-8px; float: right;}
 
+.total{
+    word-spacing: 7px;
+}
 
 #image-list { overflow:auto; }
 #image-list .image {
@@ -602,7 +600,7 @@ text-transform: uppercase;
     border:3px solid #bbb;
     border-radius:26px;
     padding:10px 20px;
-    margin: 30px;
+    margin-left: 30px;
 }
 
 .profile-container{
@@ -638,6 +636,7 @@ text-transform: uppercase;
     margin: 20px 0;
 }
 
+
 .add-recipe{
     margin: 40px 0;
 }
@@ -657,3 +656,9 @@ a{
 .likes-number{
     margin-right: 30px;
 }
+
+.followers-number{
+    color: #aaa;
+    font-size: x-large;
+}
+
