@@ -39,7 +39,7 @@
                 
                 <div class="row likes">    
                 {% with total_likes=recipe.users_like.count users_like=recipe.users_like.all %}
-                <span class="count">
+                <span class="count likes-number">
                     <i class="fas fa-heart fa-2x heart"></i> <span class="total">{{ total_likes }}</span>
                 </span>
                 
