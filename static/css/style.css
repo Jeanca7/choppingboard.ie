@@ -634,8 +634,14 @@ text-transform: uppercase;
 
 .follow-info{
     margin: 20px 0;
+    
 }
 
+
+.counts{
+    display: block;
+    justify-content: center!important;
+}
 
 .add-recipe{
     margin: 40px 0;
@@ -662,6 +668,3 @@ a{
     font-size: x-large;
 }
 
-a.follow { margin-top:-12px; float: right;}
-
-a.like { float: right; margin-top:-8px; }
