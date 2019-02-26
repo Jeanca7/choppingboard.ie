@@ -6,7 +6,7 @@ Sharing ideas, knowledge and experiences through a social media dedicated to a d
 People can learn from others and introduce followers/viewers to their own recipes, and they can do this without being a profesional chef but being passionate about cooking.
 
 ## Build status
-Travis has been used for building the status of continus integration.
+Travis has been used for building status of continus integration.
 
 [![Build Status](https://travis-ci.org/Jeanca7/choppingboard.ie.svg?branch=master)](https://travis-ci.org/Jeanca7/choppingboard.ie)
 
@@ -18,17 +18,17 @@ Include logo/demo screenshot etc.
 
 ## Tech/framework used
 <b>Built with</b>
-*Django
-*Bootstrap 4
-*jQuery
-*Ajax
-*Python
-*JavaScript
-*CSS3
-*HTML5
-*PostgreSQL database
-*Stripe
-*Heroku
+* Django
+* Bootstrap 4
+* jQuery
+* Ajax
+* Python
+* JavaScript
+* CSS3
+* HTML5
+* PostgreSQL database
+* Stripe
+* Heroku
 
 ## Features
 Everyone can view recipes including their videos and pictures. However, in order to interact with ChoppingBoard and its users, viewers must register.
@@ -64,23 +64,23 @@ ShoppingBoard is hosted on Heroku and static files are stored on AWS.
 ## Tests
 Testing was executed manually to ensure the website's responsiveness, funcionality and defensiveness work correnctly.   
 
-*Responsiveness:
+* Responsiveness:
 The site was tested on a 23.8" monitor and 13.3" MacBook Air, iphone X and ipad Pro. It was also tested on Firefox, Chrome and Safari.
 
-*Functionality:
+* Functionality:
 To ensure features of the site work effectively and on different operating systems.
-    *registration
-    *Login/logout
-    *social authentication(on Facebook, Linkedin and Google+) Social Uthentication works on deployed website only.
-    *Uploading files as images and videos.
+    * registration
+    * Login/logout
+    * social authentication(on Facebook, Linkedin and Google+) Social Uthentication works on deployed website only.
+    * Uploading files as images and videos.
 
-*Deffensiveness:
-    *Only users can login and post a recipe.
-    *An unregistered person cannot follow a user.
-    *An unregistered person cannot give a like to recipes.
-    *Only users can delete and edit their own recipe and not someone else's.
-    *Only users can edit their own profile and not someone else's.
-    *Users' profiles can only be viewed by other users.
+* Deffensiveness:
+    * Only users can login and post a recipe.
+    * An unregistered person cannot follow a user.
+    * An unregistered person cannot give a like to recipes.
+    * Only users can delete and edit their own recipe and not someone else's.
+    * Only users can edit their own profile and not someone else's.
+    * Users' profiles can only be viewed by other users.
 
 ## How to use?
 You can register with your email or login with a social media account(Facebook, Linkedin or Google+). Alternatively, you can use the username:guest and password:guest777
@@ -91,7 +91,7 @@ ChoppingBoard: (https://jeancasedo-choppingboard.herokuapp.com/)
  Appreciation for Django authentication. Simple is better than complex (https://simpleisbetterthancomplex.com/)
  Book Django 2 by Example By Antonio Mele (Publisher:Packt, 2018)
 
-###Media###
+### Media
     *Videos were obtained from Pexels.com
     *Images obtained from Pexels.com and Google.
     *Icons from Fontawesome.com
