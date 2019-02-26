@@ -39,6 +39,7 @@
                 
                 
                 <h1 class="cook-name">{{ user.get_full_name }}</h1>
+                <p class="cook-em"><i class="far fa-envelope"></i> <a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
                 
                 {% include "recipes/recipe/list_ajax.html" with recipes=user.recipes_created.all %}
                 {% endwith %}

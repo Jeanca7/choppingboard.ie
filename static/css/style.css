@@ -710,4 +710,9 @@ a{
 
 .cook-name{
     margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.cook-em{
+    margin-bottom: 10px;
 }
