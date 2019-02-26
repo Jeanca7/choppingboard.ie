@@ -21,9 +21,11 @@
                 
                 
                 <div class="row justify-content-center follow-info">
-                    <p>
                     {% with total_followers=user.followers.count %}
-                    <span class="count"><span class="total">{{ total_followers }}</span> follower{{ total_followers|pluralize }}
+                    <span class="count">
+                        <span class="total">{{ total_followers }}</span> 
+                        follower{{ total_followers|pluralize }}
+                        </span>
                     <a href="#" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follower-button follow"> 
                         {% if request.user not in user.followers.all %}
                         Follow
@@ -31,9 +33,6 @@
                         Unfollow  
                         {% endif %}
                     </a>
-                    
-                    </span>
-                    </p>
                 </div>
                 
                 
