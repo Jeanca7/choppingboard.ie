@@ -23,7 +23,7 @@
                 <div class="row justify-content-center follow-info">
                     {% with total_followers=user.followers.count %}
                     <p class="counts">
-                    <span class="count">
+                    <span class="count count-dec">
                         <span class="total">{{ total_followers }}</span> 
                         follower{{ total_followers|pluralize }}
                         </span>

@@ -676,6 +676,13 @@ a{
 
 .likes-number{
     margin-right: 30px;
+    font-size: x-large;
+    color: 	#808080;
+}
+
+.count-dec{
+    font-size: large;
+    color: 	#808080;
 }
 
 .followers-number{
