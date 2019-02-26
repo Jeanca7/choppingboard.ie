@@ -101,6 +101,10 @@ video {
     .profile{
         top: 40px;
     }
+    
+    .follow{
+        margin-top:-20px;
+    }
 }
 
 
@@ -132,6 +136,10 @@ video {
     
     .profile{
         top: 150px;
+    }
+    
+    .follow{
+        margin-top:-12px;
     }
 }
 
@@ -633,7 +641,7 @@ text-transform: uppercase;
 
 
 .follow-info{
-    margin: 50px 0;
+    margin: 50px 0 20px 0;
     
 }
 
@@ -667,7 +675,7 @@ a{
     font-size: x-large;
 }
 
-.follow { margin-top:-12px; float: right; }
+.follow { float: right; }
 
 .like { margin-top:-8px; float: right; }
 
