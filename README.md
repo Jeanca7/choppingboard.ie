@@ -1,58 +1,99 @@
-## Project title
-A little info about your project and/ or overview that explains **what** the project is about.
+## ChoppingBoard
+Social media for those who want to learn from others and want to show the world their own recipes.
 
 ## Motivation
-
+Sharing ideas, knowledge and experiences through a social media dedicated to a diversed world. 
+People can learn from others and introduce followers/viewers to their own recipes, and they can do this without being a profesional chef but being passionate about cooking.
 
 ## Build status
-Build status of continus integration i.e. travis, appveyor etc. Ex. - 
+Travis has been used for building the status of continus integration.
 
-[![Build Status](https://travis-ci.org/Jeanca7/choppingboard.ie/branches)](https://travis-ci.org/Jeanca7/choppingboard.ie)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://ci.appveyor.com/project/akashnimare/foco/branch/master)
+[![Build Status](https://travis-ci.org/Jeanca7/choppingboard.ie.svg?branch=master)](https://travis-ci.org/Jeanca7/choppingboard.ie)
 
 ## Code style
-If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex. -
+I have used standard code style.
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
- 
 ## Screenshots
 Include logo/demo screenshot etc.
 
 ## Tech/framework used
-Ex. -
-
 <b>Built with</b>
-- [Electron](https://electron.atom.io)
+*Django
+*Bootstrap 4
+*jQuery
+*Ajax
+*Python
+*JavaScript
+*CSS3
+*HTML5
+*PostgreSQL database
+*Stripe
+*Heroku
 
 ## Features
-What makes your project stand out?
+Everyone can view recipes including their videos and pictures. However, in order to interact with ChoppingBoard and its users, viewers must register.
+The content on ChoppingBoard is created by its users only.
 
-## Code Example
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+Specific features are as follows:
+1. Authentication system (registration, login, logout, password change and password reset)
+2. Social authentication (register and login using Facebook, Linkedin and Google+ (please notice that Google+ will come to an end in April 2019)) 
+3. Custom user profiles (Users can change their profile information including names, email, avatar, background image, etc.)
+4. Generated images tumbnails (using sorl-thumbnail)
+5. Pagination (using ajax)
+5. follower system (using ajax)
+6. like system (using ajax)
+7. Views 
+8. Users can email cooks from their profile. 
+
 
 ## Installation
-Provide step by step series of examples and explanations about how to get a development env running.
 
-## API Reference
+You might need to create an account on AWS (Amazon  and generate secret keys to access the static files. You can find information here: (https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) 
+Additionally, you need to install an SQL databse system to store information. ChoppingBoard uses PostgreSQL.
+ChoppingBoard utilises Stripe for payments, you can create an account here: (https://stripe.com/ie)
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+To run this project you will need to clone this repository and enter the following command in your console.
+```
+$ sudo pip3 -r install requirements.txt
+```
+
+## Deployment
+ShoppingBoard is hosted on Heroku and static files are stored on AWS.
+(https://jeancasedo-choppingboard.herokuapp.com/)
 
 ## Tests
-Describe and show how to run the tests with code examples.
+Testing was executed manually to ensure the website's responsiveness, funcionality and defensiveness work correnctly.   
+
+*Responsiveness:
+The site was tested on a 23.8" monitor and 13.3" MacBook Air, iphone X and ipad Pro. It was also tested on Firefox, Chrome and Safari.
+
+*Functionality:
+To ensure features of the site work effectively and on different operating systems.
+    *registration
+    *Login/logout
+    *social authentication(on Facebook, Linkedin and Google+) Social Uthentication works on deployed website only.
+    *Uploading files as images and videos.
+
+*Deffensiveness:
+    *Only users can login and post a recipe.
+    *An unregistered person cannot follow a user.
+    *An unregistered person cannot give a like to recipes.
+    *Only users can delete and edit their own recipe and not someone else's.
+    *Only users can edit their own profile and not someone else's.
+    *Users' profiles can only be viewed by other users.
 
 ## How to use?
-If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
-
-## Contribute
-
-Let people know how they can contribute into your project. A [contributing guideline](https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md) will be a big plus.
+You can register with your email or login with a social media account(Facebook, Linkedin or Google+). Alternatively, you can use the username:guest and password:guest777
+ChoppingBoard: (https://jeancasedo-choppingboard.herokuapp.com/)
 
 ## Credits
-Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project. 
+ Django documentation (https://docs.djangoproject.com/en/2.1/)
+ Appreciation for Django authentication. Simple is better than complex (https://simpleisbetterthancomplex.com/)
+ Book Django 2 by Example By Antonio Mele (Publisher:Packt, 2018)
 
-#### Anything else that seems useful
-
-## License
-A short snippet describing the license (MIT, Apache etc)
-
-MIT © [Yourname]()
+###Media###
+    *Videos were obtained from Pexels.com
+    *Images obtained from Pexels.com and Google.
+    *Icons from Fontawesome.com
+    *Fonts from GoogleFonts.
+    
