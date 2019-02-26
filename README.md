@@ -48,8 +48,8 @@ Specific features are as follows:
 
 ## Installation
 
-You might need to create an account on AWS (Amazon  and generate secret keys to access the static files. You can find information here: (https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) 
-Additionally, you need to install an SQL databse system to store information. ChoppingBoard uses PostgreSQL.
+You might need to create an account on AWS (Amazon  and generate secret keys to access the static files. You can find information here: (https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)   
+Additionally, you need to install an SQL databse system to store information. ChoppingBoard uses PostgreSQL.  
 ChoppingBoard utilises Stripe for payments, you can create an account here: (https://stripe.com/ie)
 
 To run this project you will need to clone this repository and enter the following command in your console.
@@ -58,7 +58,7 @@ $ sudo pip3 -r install requirements.txt
 ```
 
 ## Deployment
-ShoppingBoard is hosted on Heroku and static files are stored on AWS.
+ShoppingBoard is hosted on Heroku and static files are stored on AWS.  
 (https://jeancasedo-choppingboard.herokuapp.com/)
 
 ## Tests
@@ -83,17 +83,18 @@ To ensure features of the site work effectively and on different operating syste
     * Users' profiles can only be viewed by other users.
 
 ## How to use?
-You can register with your email or login with a social media account(Facebook, Linkedin or Google+). Alternatively, you can use the username:guest and password:guest777
+You can register with your email or login with a social media account(Facebook, Linkedin or Google+).  
+Alternatively, you can use the username:guest and password:guest777  
 ChoppingBoard: (https://jeancasedo-choppingboard.herokuapp.com/)
 
 ## Credits
- Django documentation (https://docs.djangoproject.com/en/2.1/)
- Appreciation for Django authentication. Simple is better than complex (https://simpleisbetterthancomplex.com/)
+ Django documentation (https://docs.djangoproject.com/en/2.1/)  
+ Appreciation for Django authentication. Simple is better than complex (https://simpleisbetterthancomplex.com/)  
  Book Django 2 by Example By Antonio Mele (Publisher:Packt, 2018)
 
 ### Media
-    *Videos were obtained from Pexels.com
-    *Images obtained from Pexels.com and Google.
-    *Icons from Fontawesome.com
-    *Fonts from GoogleFonts.
+* Videos were obtained from Pexels.com
+* Images obtained from Pexels.com and Google.
+* Icons from Fontawesome.com
+* Fonts from GoogleFonts.
     
