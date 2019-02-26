@@ -105,6 +105,10 @@ video {
     .follow{
         margin-top:-40px;
     }
+    
+    .like{
+        margin-top:-20px;
+    }
 }
 
 
@@ -140,6 +144,10 @@ video {
     
     .follow{
         margin-top:-12px;
+    }
+    
+    .like{
+        margin-top:-20px;
     }
 }
 
@@ -677,5 +685,5 @@ a{
 
 .follow { float: right; }
 
-.like { margin-top:-8px; float: right; }
+.like { float: right; }
 
