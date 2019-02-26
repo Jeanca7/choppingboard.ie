@@ -633,7 +633,7 @@ text-transform: uppercase;
 
 
 .follow-info{
-    margin: 20px 0;
+    margin: 50px 0;
     
 }
 
@@ -670,3 +670,4 @@ a{
 .follow { margin-top:-12px; float: right; }
 
 .like { margin-top:-8px; float: right; }
+
