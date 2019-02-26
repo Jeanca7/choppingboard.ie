@@ -112,6 +112,20 @@ video {
 }
 
 
+
+@media (max-width: 699px) and (min-width: 641px){
+    .user-detail{
+        height: 130px;
+        width: 130px;
+    }
+    
+    .profile{
+        top: 167px;
+    }
+}
+
+
+
 @media (max-width: 320px) {
     video{
         width: 280px;
@@ -695,5 +709,5 @@ a{
 .like { float: right; }
 
 .cook-name{
-    margin-top: 20px;
+    margin-top: 10px;
 }
