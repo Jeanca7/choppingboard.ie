@@ -668,3 +668,6 @@ a{
     font-size: x-large;
 }
 
+a.follow { float: right;}
+
+a.like { float: right; margin-top:-8px; }
