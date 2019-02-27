@@ -60,6 +60,9 @@ $ sudo pip3 -r install requirements.txt
 ShoppingBoard is hosted on Heroku and static files are stored on AWS.  
 (https://jeancasedo-choppingboard.herokuapp.com/)
 
+## Mockups
+![laptop](https://github.com/Jeanca7/choppingboard.ie/blob/master/mockups%20desktop:laptop%20screen%20-%20ChoppingBoard.pdf)
+
 ## Tests
 Testing was executed manually to ensure the website's responsiveness, funcionality and defensiveness work correnctly.   
 
