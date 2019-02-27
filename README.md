@@ -15,9 +15,9 @@ Travis has been used for building status of continus integration.
 I have used standard code style.
 
 ## Mockups
-[Desktop/laptop](/choppingboard/mockups desktop:laptop screen - ChoppingBoard.pdf)  
-[Ipad](/mockups ipad screen - ChoppingBoard.pdf)  
-[mobile](/mockups mobile phone screen - ChoppingBoard.pdf)  
+[Desktop laptop](/choppingboard/mockups desktop:laptop screen - ChoppingBoard.pdf)  
+[Ipad](/choppingboard/mockups ipad screen - ChoppingBoard.pdf)  
+[mobile](/choppingboard/mockups mobile phone screen - ChoppingBoard.pdf)  
 
 ## Tech/framework used
 <b>Built with</b>
