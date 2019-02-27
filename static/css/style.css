@@ -716,3 +716,8 @@ a{
 .cook-em{
     margin-bottom: 10px;
 }
+
+pre{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 16px;
+}

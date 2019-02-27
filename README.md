@@ -1,5 +1,5 @@
 ## ChoppingBoard
-Social media for those who want to learn from others and want to show the world their own recipes.
+A Social media for those who want to learn from others and want to show the world their own recipes.
 
 ## Motivation
 Sharing ideas, knowledge and experiences through a social media dedicated to a diversed world. 
@@ -28,8 +28,9 @@ Include logo/demo screenshot etc.
 * HTML5
 * PostgreSQL database
 * Stripe
-* Heroku
+* Heroku  
 
+* Adobe Comp (To create mockups)
 ## Features
 Everyone can view recipes including their videos and pictures. However, in order to interact with ChoppingBoard and its users, viewers must register.
 The content on ChoppingBoard is created by its users only.
