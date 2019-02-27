@@ -14,11 +14,6 @@ Travis has been used for building status of continus integration.
 ## Code style
 I have used standard code style.
 
-## Mockups
-[Desktop laptop] (docs/mockups desktop:laptop screen - ChoppingBoard.pdf)  
-[Ipad] (docs/mockups ipad screen - ChoppingBoard.pdf)  
-[mobile] (docs/mockups mobile phone screen - ChoppingBoard.pdf)  
-
 ## Tech/framework used
 <b>Built with</b>
 * Django
