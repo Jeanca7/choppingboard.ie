@@ -1,3 +1,4 @@
+![img_0050](https://user-images.githubusercontent.com/43143675/53450907-62556a80-3a15-11e9-8d53-0ad96dc523bd.jpg)
 ## ChoppingBoard
 A Social media for those who want to learn from others and want to show the world their own recipes.
 
@@ -14,7 +15,7 @@ Travis has been used for building status of continus integration.
 I have used standard code style.
 
 ## Screenshots
-Include logo/demo screenshot etc.
+
 
 ## Tech/framework used
 <b>Built with</b>
