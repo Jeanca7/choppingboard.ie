@@ -61,9 +61,9 @@ ShoppingBoard is hosted on Heroku and static files are stored on AWS.
 (https://jeancasedo-choppingboard.herokuapp.com/)
 
 ## Mockups
-[desktop:laptop screen mockups - ChoppingBoard.pdf](https://github.com/Jeanca7/choppingboard.ie/files/2911743/desktop.laptop.screen.mockups.-.ChoppingBoard.pdf)
-[ipad screen mockups - ChoppingBoard.pdf](https://github.com/Jeanca7/choppingboard.ie/files/2911746/ipad.screen.mockups.-.ChoppingBoard.pdf)
-[mobile phone screen mockups - ChoppingBoard.pdf](https://github.com/Jeanca7/choppingboard.ie/files/2911748/mobile.phone.screen.mockups.-.ChoppingBoard.pdf)
+* [desktop:laptop screen mockups - ChoppingBoard.pdf](https://github.com/Jeanca7/choppingboard.ie/files/2911743/desktop.laptop.screen.mockups.-.ChoppingBoard.pdf)  
+* [ipad screen mockups - ChoppingBoard.pdf](https://github.com/Jeanca7/choppingboard.ie/files/2911746/ipad.screen.mockups.-.ChoppingBoard.pdf)  
+* [mobile phone screen mockups - ChoppingBoard.pdf](https://github.com/Jeanca7/choppingboard.ie/files/2911748/mobile.phone.screen.mockups.-.ChoppingBoard.pdf)
 
 ## Tests
 Testing was executed manually to ensure the website's responsiveness, funcionality and defensiveness work correnctly.   
