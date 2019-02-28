@@ -102,13 +102,23 @@ video {
         top: 40px;
     }
     
-    .follow{
-        margin-top:-40px;
+    /*.follow{*/
+    /*    margin-top:-40px;*/
+    /*}*/
+    
+    .follow-info{
+        margin-left: 0;
+        margin-right: 0;
     }
     
-    .like{
-        margin-top:-47px;
+    .likes{
+        margin-left: 0;
+        margin-right: 0;
     }
+    
+    /*.like{*/
+    /*    margin-top:-47px;*/
+    /*}*/
     
     .display-like{
         float: right;
@@ -674,7 +684,6 @@ text-transform: uppercase;
 
 .follow-info{
     margin-top: 50px;
-    
 }
 
 
