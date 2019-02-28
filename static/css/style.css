@@ -103,7 +103,7 @@ video {
     }
     
     .follow{
-        margin-top:-9px;
+        margin-top:-40px;
     }
     
     .follow-info{
@@ -117,7 +117,7 @@ video {
     }
     
     .like{
-        margin-top:-49px;
+        margin-top:-47px;
     }
     
     .display-like{
@@ -659,7 +659,7 @@ text-transform: uppercase;
     border:3px solid #bbb;
     border-radius:26px;
     padding:10px 10px;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .profile-container{
