@@ -109,6 +109,11 @@ video {
     .like{
         margin-top:-47px;
     }
+    
+    .display-like{
+        float: right;
+        margin-top:-47px;
+    }
 }
 
 
@@ -161,6 +166,11 @@ video {
     }
     
     .like{
+        margin-top:-8px;
+    }
+    
+    .display-like{
+        float: right;
         margin-top:-8px;
     }
 }
