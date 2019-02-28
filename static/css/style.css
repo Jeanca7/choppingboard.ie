@@ -103,7 +103,7 @@ video {
     }
     
     .follow{
-        margin-top:-40px;
+        margin-top:-9px;
     }
     
     .follow-info{
@@ -697,7 +697,7 @@ text-transform: uppercase;
 
 
 .counts{
-    justify-content: center!important;
+    display: inline-block;
 }
 
 .add-recipe{
