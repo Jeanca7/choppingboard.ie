@@ -497,10 +497,6 @@ ul.messages li a.close {
 }
 
 
-
-
-
-
 .total{
     word-spacing: 7px;
 }
@@ -728,7 +724,10 @@ a{
     font-size: x-large;
 }
 
-.follow { float: right; }
+.follow { 
+    float: right; 
+    display: inline-block;
+}
 
 .like { float: right; }
 
