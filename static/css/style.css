@@ -137,6 +137,15 @@ video {
     .profile{
         top: 167px;
     }
+    
+    .follow{
+        margin-top:-9px;
+    }
+    
+    .follow-info{
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 
@@ -649,7 +658,7 @@ text-transform: uppercase;
     color:#aaa;
     border:3px solid #bbb;
     border-radius:26px;
-    padding:10px 20px;
+    padding:10px 10px;
     margin-left: 15px;
 }
 
