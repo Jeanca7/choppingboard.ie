@@ -726,7 +726,7 @@ a{
 
 .follow { 
     float: right; 
-    display: inline-block;
+    display: block;
 }
 
 .like { float: right; }
