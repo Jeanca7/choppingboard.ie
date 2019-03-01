@@ -61,7 +61,7 @@
 
       <ul class="navbar-nav nav-bar-right">
         <li class="nav-item">
-          <a class="nav-link disabled" href="{% url 'user_detail' request.user %}"><img src="{{ MEDIA_URL }}{{ user.profile.image }}" class="img-nav-circle"> Hello {{ request.user.username }}, </a>
+          <a class="nav-link disabled" href="{% url 'user_detail' request.user %}"><img src="{{ MEDIA_URL }}{{ user.profile.image }}" class="img-nav-circle" alt="avatar"> Hello {{ request.user.username }}, </a>
         </li>
         </ul>
         
