@@ -660,6 +660,7 @@ text-transform: uppercase;
     border-radius:26px;
     padding:10px 10px;
     margin-left: 15px;
+    display: inline-block;
 }
 
 .profile-container{
@@ -721,6 +722,7 @@ a{
 .count-dec{
     font-size: large;
     color: 	#808080;
+    display: inline-block; 
 }
 
 .followers-number{
@@ -746,3 +748,5 @@ pre{
     font-size: 16px;
     overflow-x: scroll;
 }
+
+
