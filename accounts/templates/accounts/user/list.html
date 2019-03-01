@@ -11,7 +11,7 @@
     <div class="col-xs-12 cook-avatar-list">
         <a href="{{ user.get_absolute_url }}">
             {% thumbnail user.profile.image "180x180" crop="100%" as im %}      
-            <img src="{{ im.url }}" class="cook-img">
+            <img src="{{ im.url }}" class="cook-img" alt="Avatar">
             {% endthumbnail %}
         </a>
         <div class="cook-username">
