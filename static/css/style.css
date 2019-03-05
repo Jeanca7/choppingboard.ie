@@ -102,10 +102,7 @@ video {
         top: 40px;
     }
     
-    .follow{
-        margin-top:-40px;
-    }
-    
+   
     .follow-info{
         margin-left: 0;
         margin-right: 0;
@@ -116,9 +113,6 @@ video {
         margin-right: 0;
     }
     
-    .like{
-        margin-top:-47px;
-    }
     
     .display-like{
         float: right;
@@ -139,9 +133,6 @@ video {
         top: 167px;
     }
     
-    .follow{
-        margin-top:-40px;
-    }
     
     .follow-info{
         margin-left: 0;
@@ -181,14 +172,6 @@ video {
     
     .profile{
         top: 150px;
-    }
-    
-    .follow{
-        margin-top:-9px;
-    }
-    
-    .like{
-        margin-top:-8px;
     }
     
     .display-like{
@@ -729,10 +712,14 @@ a{
 }
 
 .follow { 
-    float: right; 
+    float: right;
+    margin-top:-9px;
 }
 
-.like { float: right; }
+.like { 
+    float: right; 
+    margin-top:-8px;
+}
 
 .cook-name{
     margin-top: 10px;
@@ -748,8 +735,4 @@ pre{
     font-size: 16px;
     overflow-x: scroll;
 }
-<<<<<<< HEAD
 
-
-=======
->>>>>>> ef8ad8f2564b11855007f1333994d6175e158b7e
